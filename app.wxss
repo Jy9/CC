@@ -1,0 +1,19 @@
+/**app.wxss**/
+.fs28{
+  font-size: 28rpx;
+}
+.fs32{
+  font-size: 32rpx;
+}
+.fs36{
+  font-size: 36rpx;
+}
+.fc9{
+  color: #999;
+}
+.lt{
+  float: left;
+}
+.rt{
+  float: right;
+}
