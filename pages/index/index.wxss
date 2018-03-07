@@ -51,7 +51,7 @@
   right: 20rpx;
   bottom: 120rpx;
   border-radius: 20rpx;
-  box-shadow: -1px 1px 10rpx 0px #999;
+  box-shadow: -1px 1px 10rpx 0px rgba(0, 0, 0, 0.3);
   padding-left: 20rpx;
   padding-right: 20rpx;
 }
@@ -87,7 +87,8 @@
 /*card动画  */
 @keyframes mycardshow {
   0% {bottom:-1000rpx}
-  70% {bottom: 140rpx}
+  50% {bottom: 160rpx}
+  70% {bottom: 110rpx}
   100% {bottom: 120rpx}
 }
 @keyframes mycardhide {
