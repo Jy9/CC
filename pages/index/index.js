@@ -29,7 +29,7 @@ Page({
     setTimeout(function(){
       obj.setData({
         isCard: "block",
-        cardBottom: "mycardshow 1s"
+        cardBottom: "mycardshow 2s"
       });
     },400)
   },
