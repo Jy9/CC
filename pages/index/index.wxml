@@ -1,23 +1,18 @@
 <!--index.wxml-->
-<view class='header' id='header'>余额 ： {{user.residue}} 分钟</view>
 <view class="container">
 
 </view>
-<view class='footer' bindtap='footertap'>
-    <view class='msg fs28 fc9'>{{user.signature}}</view>
-    <image src='{{user.zoologyimg}}'></image>
-</view>
+<view class='footer' bindtap='footertap' style='opacity:{{footerOP}}'></view>
 <view class='card' style='display:{{isCard}}; opacity:{{cardOP}}'>
   <view style='animation:{{cardBottom}};' class='fc9 fs36'>
     <view>
-      <image src='{{user.zoologyimg}}'></image>
-      <image class='compile' bindtap='compile' src='{{compileicon}}'></image>
-      <view>姓名：{{user.name}}<text class='recharge fs32' style='display:{{compile}}'>修改</text></view>
-      <view>生日：{{user.birthday}}<text class='recharge fs32' style='display:{{compile}}'>修改</text></view>
-      <view>生肖：{{user.zoology}}</view>
-      <view>星座：{{user.constellation}}</view>
-      <view>余额：{{user.residue}}元<text class='recharge fs32'>充值</text></view>
-      <view>个性签名：{{user.signature}}<text class='recharge fs32' style='display:{{compile}}'>修改</text></view>
+      <image src='{{user.image}}'></image>
+      <image class='compile' bindtap='compile' src='https://raw.githubusercontent.com/Jy9/icon/master/compile.png'></image>
+      <view>姓名：{{user.name}} <image class='rt' src='{{sexs[user.sex]}}'></image></view>
+      <view>生日：{{user.birthday}}</view>
+      <view>住址：{{user.address}}</view>
+      <!--<view>余额：{{user.residue}} 分钟<text class='recharge fs32' bindtap='rechargeing'>充值</text></view>-->
+      <view>个性签名：{{user.signature}}</view>
     </view>
     <view class='btn' bindtap='cardBtn'>关闭</view>
   </view>
