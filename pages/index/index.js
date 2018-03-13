@@ -95,6 +95,7 @@ Page({
     console.log("p")
     var thisData = this;
     thisData.setData({
+      footerBd: 0.3,
       footer:{
 	   		footerOpacity:0,
 	    	footerWidth:"0rpx",
@@ -102,11 +103,7 @@ Page({
 	    	footerShow:"myfooterhide 1s"
 	   	}
    });
-    setTimeout(function () {
-      thisData.setData({
-        footerBd: 0.3
-      });
-    }, 1000)
+    
   },
   cardBtn:function(){
     var obj = this;
