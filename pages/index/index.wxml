@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container" style='height:{{containerHeight}}'>
   <view class='subject'>
-    <view>热门专题：</view>
-    <view>
+    <view class='fs32'>热门专题：</view>
+    <view class='fs28'>
       <view class='lt'>拼阿斯顿车</view>
       <view class='lt'>拼阿三车</view>
       <view class='lt'>拼是车</view>
@@ -14,44 +14,28 @@
 		<view class='image'>
       <image src='{{iconUrl+contents.image}}'></image>
     </view>
-    <view class='date fs36'>发布者：{{contents.name}}   <text class='fs32'>{{contents.date}}</text>
-    </view>
-    <view class='title fs46'>{{contents.title}}</view>
-    <view class='details fs36'>{{contents.details}}</view>
+    <view class='date fs32'>
+    <text class='lt'>发布者：{{contents.name}}</text>   
+    <text class='fs28 lt'>{{contents.date}}</text>
     <view class='praise'>
       <image src='{{iconUrl}}heart.png'></image>
-      <text class='fs32'>{{contents.praise}}</text>
+      <text class='fs28'>{{contents.praise}}</text>
     </view>
+    </view>
+    <view class='title fs36'>{{contents.title}}</view>
+    <view class='details fs28'>{{contents.details}}</view>
+    
 	</view>
-  <view class="more">
-    <!--加载更多-->
-    加载更多 (。・∀・)ノ
-  </view>
+  <view class="more fs32">加载更多 (。・∀・)ノ</view>
   <view class="cont">
     <image src='{{iconUrl}}first_background.jpg'></image>
-    <view>榆林老乡北京平台</view>
+    <view class='fs28 text'>
+        <text class='lt'>成员列表</text>
+        <text class='lt'>个人中心</text>
+        <text class='lt'>关于软件</text>
+    </view>
+    <view class='fs28'>榆林老乡北京平台</view>
   </view>
-</view>
-<view class='footer' catchtouchmove='footertouchmove' catchtouchend='footertouchend' bindtap='footertap' style='border:6rpx solid rgba(0, 0, 0, {{footerBd}})'>
-	<view class='footercontent' style='width:{{footer.footerWidth}};height:{{footer.footerHeight}};opacity:{{footer.footerOpacity}};animation:{{footer.footerShow}};'>
-		<view>成员列表</view>
-		<view>个人中心</view>
-		<view>和我相关</view>
-	</view>
 </view>
 
-<view class='card' style='display:{{isCard}}; opacity:{{cardOP}}'>
-  <view style='animation:{{cardBottom}};' class='fc9 fs36'>
-    <view>
-      <image src='{{user.image}}'></image>
-      <image class='compile' bindtap='compile' src='https://raw.githubusercontent.com/Jy9/icon/master/compile.png'></image>
-      <view>姓名：{{user.name}} <image class='rt' src='{{iconUrl+sexs[user.sex]}}'></image></view>
-      <view>生日：{{user.birthday}}</view>
-      <view>住址：{{user.address}}</view>
-      <view>户籍：{{user.register}}</view>
-      <!--<view>余额：{{user.residue}} 分钟<text class='recharge fs32' bindtap='rechargeing'>充值</text></view>-->
-      <view>个性签名：{{user.signature}}</view>
-    </view>
-    <view class='btn' bindtap='cardBtn'>关闭</view>
-  </view>
-</view>
+<view class='footer fs28'>成员人数：{{peoplenum}}人</view>

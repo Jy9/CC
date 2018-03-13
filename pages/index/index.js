@@ -1,17 +1,7 @@
 //index.js
 Page({
   data: {
-    isCard:"none",
-    cardOP:0,
-    cardBottom:"none",
-    footerBd:0.3,
-    footer:{
-    	footerOpacity:0,
-    	footerWidth:"0rpx",
-    	footerHeight:"0rpx",
-    	footerShow:"none"
-    },
-    compile: "none",//inling-block
+      peoplenum:12,
     iconUrl:"https://raw.githubusercontent.com/Jy9/icon/master/",
     sexs: ["woman.png","man.png"],
     user:null
@@ -34,7 +24,7 @@ Page({
           date:"2108/3/13",
           title:"我是开发者",
           name:"贾越",
-          details:"奥萨蒂哦我的阿斯觉得我啊为基地",
+          details:"奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
           image:"portrait.png",
           praise:112
         }, {
@@ -64,60 +54,5 @@ Page({
               })
           }
       });*/
-  },
-  footertap:function(){
-    var obj = this;
-    obj.setData({
-      cardOP:1,
-      compile: "none",
-      footerBd:0
-    });
-    setTimeout(function(){
-      obj.setData({
-        isCard: "block",
-        cardBottom: "mycardshow 1s"
-      });
-    },400)
-  },
-  footertouchmove:function(){
-    console.log("o")
-  	this.setData({
-      footerBd:0,
-      footer:{
-	   		footerOpacity:1,
-	    	footerWidth:"360rpx",
-	    	footerHeight:"270rpx",
-	    	footerShow:"myfootershow 0.6s"
-	   	}
-   });
-  },
-  footertouchend:function(){
-    console.log("p")
-    var thisData = this;
-    thisData.setData({
-      footerBd: 0.3,
-      footer:{
-	   		footerOpacity:0,
-	    	footerWidth:"0rpx",
-	    	footerHeight:"0rpx",
-	    	footerShow:"myfooterhide 1s"
-	   	}
-   });
-    
-  },
-  cardBtn:function(){
-    var obj = this;
-    obj.setData({
-      cardOP: 0
-    });
-    setTimeout(function () {
-      obj.setData({
-        isCard: "none",
-        footerBd:0.3
-      });
-    },400)
-  },
-  compile:function(){
-    //跳转编辑个人信息页面
-  }
+   }
 })

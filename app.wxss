@@ -2,6 +2,9 @@
 page{
   color:#999;
 }
+.fs24{
+  font-size: 20rpx;
+}
 .fs28{
   font-size: 28rpx;
 }

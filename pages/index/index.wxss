@@ -5,15 +5,15 @@
 }
 .containers{
 	width:750rpx;
-	height:360rpx;
-	border-bottom:4rpx solid #eee;
+	height:260rpx;
+	border-bottom:1rpx solid #eee;
   position: relative;
   padding-left: 20rpx;
   box-sizing: border-box;
 }
 .containers>.image{
-  width: 240rpx;
-  height: 240rpx;
+  width: 180rpx;
+  height: 180rpx;
   position: absolute;
   right: 20rpx;
   top: 60rpx;
@@ -21,15 +21,36 @@
   border-radius: 20rpx;
 }
 .image>image{
-  width: 240rpx;
-  height: 240rpx;
+  width: 180rpx;
+  height: 180rpx;
 }
 .date{
   margin-top: 30rpx;
+  overflow: hidden;
 }
-.date>text{
+.date>text:nth-child(2){
   margin-left: 30rpx;
   color: #F27C5F;
+}
+.praise{
+    width: 120rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+}
+.praise>text{
+  position: absolute;
+  top: 0rpx;
+  left: 60rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.praise>image{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 36rpx;
+  height: 36rpx;
 }
 .title{
   color: #666;
@@ -37,35 +58,19 @@
 }
 .details{
   width: 460rpx;
-  margin-top: 30rpx;
-  line-height: 60rpx;
+  margin-top: 10rpx;
+  line-height: 40rpx;
   height: 120rpx;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
-.praise{
-  margin-top: 20rpx;
-  position: relative;
-}
-.praise>text{
-  position: absolute;
-  top: 0rpx;
-  left: 90rpx;
-  line-height: 36rpx;
-}
-.praise>image{
-  position: absolute;
-  top: 0rpx;
-  left: 30rpx;
-  width: 36rpx;
-  height: 36rpx;
-}
+
 .subject{
   padding: 0rpx 20rpx;
   box-sizing: border-box;
-  border-bottom: 6rpx solid #eee;
+  border-bottom: 3rpx dashed #eee;
   padding-bottom: 20rpx;
 }
 .subject>view:first-child{
@@ -81,10 +86,11 @@
   border-radius: 10rpx;
   border: 1rpx solid #F27C5F;
   color: #F27C5F;
-  padding: 6rpx 20rpx;
+  padding: 4rpx 20rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 }
+
 .more{
   width: 750rpx;
   height: 110rpx;
@@ -92,6 +98,7 @@
   text-align: center;
   line-height: 110rpx;
 }
+
 .cont{
   width: 750rpx;
   position: relative;
@@ -105,114 +112,32 @@
   left: 0px;
 }
 .cont>view{
-  position: relative;
+    position: relative;
   line-height: 90rpx;
-  text-align: center;
-  padding:0rpx 80rpx;
-  box-sizing:border-box;
+   text-align: center;
+}
+.cont>view.text{
+    padding: 0rpx 85rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.cont>view>text{
+    color:#F27C5F;
+    display: block;
+    width: 180rpx;
+    border-bottom: 1rpx solid #F27C5F;
+    border-top: 1rpx solid #F27C5F;
 }
 
 .footer{
-    width: 80rpx;
-    height: 80rpx;
-    border: 6rpx solid rgba(0, 0, 0, 0.3);
-    border-radius: 30rpx;
+    line-height: 40rpx;
     position: fixed;
-    bottom:260rpx;
-    right:110rpx;
-    transition: all 0.6s;
-    z-index: 1;
-}
-.footercontent{
-  position: absolute;
-  bottom: 0rpx;
-  right: 0rpx;
-	overflow:hidden;
-  background: rgba(255, 255, 255, 0.8)
-}
-@keyframes myfootershow {
-  0% {width:0rpx;height:0rpx;opacity:0;}
-  70% {width:400rpx;height:300rpx;opacity:1;}
-  100% {width:360rpx;height:270rpx;opacity:1;}
-}
-@keyframes myfooterhide {
-  0% {width:360rpx;height:270rpx;opacity:1;}
-  70% {width:400rpx;height:300rpx;opacity:1;}
-  100% {width:0rpx;height:0rpx;opacity:0;}
-}
-.footercontent>view{
-  color:#999;
-	line-height:90rpx;
-  text-align: center;
-  border-top: 1rpx solid rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
-}
-.footercontent>view:first-child{
-  border-top:1rpx solid #e4393c;
-}
-
-.card{
-  position: fixed;
-  bottom: 0rpx;
-  width: 750rpx;
-  height: 100%;
-  transition: all 0.4s;
-}
-.card>view{
-  width: 600rpx;
-  height: 1000rpx;
-  background: #fff;
-  position:absolute;
-  right: 20rpx;
-  bottom: 120rpx;
-  border-radius: 20rpx;
-  box-shadow: -1px 1px 10rpx 0px rgba(0, 0, 0, 0.3);
-  padding-left: 20rpx;
-  padding-right: 20rpx;
-}
-.card>view>view>view{
-  overflow: hidden;
-  line-height: 55rpx;
-  margin-top: 10rpx;
-}
-.card>view>view>view>image{
-    width: 50rpx;
-    height: 50rpx;
-}
-.recharge{
-  color: #72CE6A;
-  margin-left: 40rpx;
-}
-.card>view>view>image{
-  width: 500rpx;
-  height: 500rpx;
-  margin-left: 30rpx;
-}
-.card>view>view>image.compile{
-  width: 80rpx;
-  height: 80rpx;
-  position: absolute;
-  top:20rpx;
-  right: 20rpx;
-}
-.card>view>.btn{
-  position:absolute;
-  bottom:0px;
-  left: 0px;
-  width: 100%;
-  text-align: center;
-  line-height: 80rpx;
-  border-top: 1px solid #eee;
-}
-/*card动画  */
-@keyframes mycardshow {
-  0% {bottom:-1000rpx}
-  50% {bottom: 160rpx}
-  70% {bottom: 110rpx}
-  100% {bottom: 120rpx}
-}
-@keyframes mycardhide {
-  0% {bottom:120rpx}
-  70% {bottom: 140rpx}
-  100% {bottom: -1000rpx}
+    bottom: 30rpx;
+    right: 20rpx;
+    background:#00B800;
+    text-align: center;
+    color:#fff;
+    padding: 10rpx 20rpx;
+    border-radius: 12rpx;
+    box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(0, 0, 0, 0.4);
 }
