@@ -1,18 +1,154 @@
 /**index.wxss**/
 .container{
-  
+  padding-top: 60rpx;
+  box-sizing: border-box;
+}
+.containers{
+	width:750rpx;
+	height:360rpx;
+	border-bottom:4rpx solid #eee;
+  position: relative;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.containers>.image{
+  width: 240rpx;
+  height: 240rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 60rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+.image>image{
+  width: 240rpx;
+  height: 240rpx;
+}
+.date{
+  margin-top: 30rpx;
+}
+.date>text{
+  margin-left: 30rpx;
+  color: #F27C5F;
+}
+.title{
+  color: #666;
+  margin-top: 20rpx;
+}
+.details{
+  width: 460rpx;
+  margin-top: 30rpx;
+  line-height: 60rpx;
+  height: 120rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.praise{
+  margin-top: 20rpx;
+  position: relative;
+}
+.praise>text{
+  position: absolute;
+  top: 0rpx;
+  left: 90rpx;
+  line-height: 36rpx;
+}
+.praise>image{
+  position: absolute;
+  top: 0rpx;
+  left: 30rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.subject{
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 6rpx solid #eee;
+  padding-bottom: 20rpx;
+}
+.subject>view:first-child{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.subject>view:last-child{
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.subject>view:last-child>view{
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #F27C5F;
+  color: #F27C5F;
+  padding: 6rpx 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.more{
+  width: 750rpx;
+  height: 110rpx;
+  border-bottom:12rpx solid #eee;
+  text-align: center;
+  line-height: 110rpx;
+}
+.cont{
+  width: 750rpx;
+  position: relative;
+  padding-top: 80rpx;
+}
+.cont>image{
+  width: 750rpx;
+  height: 360rpx;
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+.cont>view{
+  position: relative;
+  line-height: 90rpx;
+  text-align: center;
+  padding:0rpx 80rpx;
+  box-sizing:border-box;
 }
 
 .footer{
     width: 80rpx;
     height: 80rpx;
-    border: 6rpx solid #000;
+    border: 6rpx solid rgba(0, 0, 0, 0.3);
     border-radius: 30rpx;
     position: fixed;
     bottom:80rpx;
     right:40rpx;
-    opacity: 0.2;
-    transition: opacity 0.4s;
+    transition: all 0.6s;
+    z-index: 1;
+}
+.footercontent{
+  position: absolute;
+  bottom: 0rpx;
+  right: 0rpx;
+	overflow:hidden;
+  background: rgba(255, 255, 255, 0.8)
+}
+@keyframes myfootershow {
+  0% {width:0rpx;height:0rpx;opacity:0;}
+  70% {width:400rpx;height:300rpx;opacity:1;}
+  100% {width:360rpx;height:270rpx;opacity:1;}
+}
+@keyframes myfooterhide {
+  0% {width:360rpx;height:270rpx;opacity:1;}
+  70% {width:400rpx;height:300rpx;opacity:1;}
+  100% {width:0rpx;height:0rpx;opacity:0;}
+}
+.footercontent>view{
+  color:#999;
+	line-height:90rpx;
+  text-align: center;
+  border-top: 1rpx solid rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+.footercontent>view:first-child{
+  border-top:1rpx solid #e4393c;
 }
 
 .card{
@@ -36,7 +172,7 @@
 }
 .card>view>view>view{
   overflow: hidden;
-  line-height: 65rpx;
+  line-height: 55rpx;
   margin-top: 10rpx;
 }
 .card>view>view>view>image{
@@ -79,7 +215,4 @@
   0% {bottom:120rpx}
   70% {bottom: 140rpx}
   100% {bottom: -1000rpx}
-}
-.card>view>view>view{
-  
 }
