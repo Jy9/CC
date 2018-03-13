@@ -21,8 +21,8 @@
   border-radius: 20rpx;
 }
 .image>image{
-  width: 180rpx;
-  height: 180rpx;
+    height: 180rpx;
+    width: 180rpx;
 }
 .date{
   margin-top: 30rpx;
