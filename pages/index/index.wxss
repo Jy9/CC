@@ -118,8 +118,8 @@
     border: 6rpx solid rgba(0, 0, 0, 0.3);
     border-radius: 30rpx;
     position: fixed;
-    bottom:80rpx;
-    right:40rpx;
+    bottom:260rpx;
+    right:110rpx;
     transition: all 0.6s;
     z-index: 1;
 }
