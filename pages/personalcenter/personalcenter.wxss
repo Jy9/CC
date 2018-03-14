@@ -1,5 +1,4 @@
 /**personalcenter.wxss**/
-
 .header_back{
   position: absolute;
   top: 80rpx;
@@ -8,11 +7,11 @@
 }
 .bgimage{
   width: 750rpx;
-  height: 450rpx;
+  height: 463.5rpx;
 }
-.image{
+.titleimage{
   position: absolute;
-  top: 380rpx;
+  top: 400rpx;
   left: 40rpx;
   width: 180rpx;
   height: 180rpx;
@@ -20,14 +19,83 @@
   border:10rpx solid #fff;
 }
 
+.name,.headerpraise,.wxnum,.birthday,.address,.register,.introduce{
+    position: absolute;
+    transition: opacity 0.8s;
+}
+.name{
+    top: 480rpx;
+    left: 280rpx;
+    color: #666;
+}
+.wxnum{
+    top: 540rpx;
+    left: 280rpx;
+}
+.headerpraise{
+    width: 70rpx;
+    height: 70rpx;
+    top: 480rpx;
+    right: 20rpx;
+}
+.headerpraise>image{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    top:5px;
+    left:0px;
+}
+.headerpraise>text{
+    display: block;
+    color: #F27C5F;
+    position: absolute;
+    top: 0rpx;
+    left: -80rpx;
+    border: 1rpx solid #F27C5F;
+    border-radius: 12rpx;
+    padding: 0rpx 10rpx;
+}
+.address{
+    top: 640rpx;
+    left: 20rpx;
+}
+.birthday,.register{
+    top: 680rpx;
+}
+.birthday>text,.register>text,.address>text{
+    color: #666;
+}
+.birthday{
+    left: 320rpx;
+}
+.register{
+    left: 20rpx;
+}
+.introduce{
+    top: 760rpx;
+    width: 710rpx;
+    height: 200rpx;
+    left: 20rpx;
+}
+
 .nav{
   width: 750rpx;
   height: 80rpx;
-  border-top: 6rpx solid #eee;
+  background: #fff;
+  position: relative;
   border-bottom: 1rpx solid #eee;
+  transition: margin 0.8s;
+}
+.nav>view:first-child{
+    width: 750rpx;
+    border-bottom: 6rpx solid #eee;
+    border-top: 1rpx dashed #eee;
+    position: absolute;
+    top: -80rpx;
+    background: #fff;
 }
 .nav>view{
-  width: 250rpx;
+  width: 375rpx;
   line-height: 80rpx;
   text-align: center;
   transition: all 0.4s;
@@ -35,4 +103,94 @@
 .nav>view.active{
   color: #F27C5F;
   border-bottom: 1rpx solid #F27C5F;
+}
+
+.content{
+    width: 750rpx;
+    background: #fff;
+    position: relative;
+}
+.content>view{
+    position: absolute;
+    left: 750rpx;
+    top: 0rpx;
+    width: 750rpx;
+    opacity: 0;
+    transition: all 0.4s;
+    background: #fff;
+}
+.content>view.active{
+    left: 0rpx;
+    opacity: 1;
+}
+
+.containers{
+	width:750rpx;
+	height:260rpx;
+	border-bottom:1rpx solid #eee;
+  position: relative;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.containers>.image{
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 60rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+.image>image{
+    height: 180rpx;
+    width: 180rpx;
+}
+.date{
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+.date>text:nth-child(2){
+  margin-left: 30rpx;
+  color: #F27C5F;
+}
+.praise{
+    width: 120rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+}
+.praise>text{
+  position: absolute;
+  top: 0rpx;
+  left: 60rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.praise>image{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.title{
+  color: #666;
+  margin-top: 20rpx;
+}
+.details{
+  width: 460rpx;
+  margin-top: 10rpx;
+  line-height: 40rpx;
+  height: 120rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.more{
+  width: 750rpx;
+  height: 110rpx;
+  border-bottom:12rpx solid #eee;
+  text-align: center;
+  line-height: 110rpx;
 }
