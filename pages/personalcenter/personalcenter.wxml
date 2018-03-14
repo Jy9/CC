@@ -1,6 +1,6 @@
 <!--personalcenter.wxml-->
 <view class='header'>
-  <view class='header_back' catchtap='header_back'>《返回</view>
+  <view class='header_back fs36' catchtap='header_back'>《返回</view>
   <image mode='aspectFill' src='{{iconUrl}}photo1.jpg' class='bgimage'></image>
   <image mode='aspectFill' src='{{iconUrl}}photo.jpg' class='image'></image>
   <view class='name'>贾越</view>
