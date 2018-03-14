@@ -193,4 +193,5 @@
   border-bottom:12rpx solid #eee;
   text-align: center;
   line-height: 110rpx;
+  box-sizing:border-box;
 }
