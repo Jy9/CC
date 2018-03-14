@@ -1,7 +1,10 @@
 {
     "pages":[
         "pages/index/index",
-        "pages/logs/logs"
+        "pages/logs/logs",
+        "pages/peoplelist/peoplelist",
+        "pages/about/about",
+        "pages/personalcenter/personalcenter"
     ],
     "window": {
         "navigationStyle": "custom",

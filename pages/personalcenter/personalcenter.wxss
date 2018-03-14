@@ -1,0 +1,38 @@
+/**personalcenter.wxss**/
+
+.header_back{
+  position: absolute;
+  top: 80rpx;
+  left: 20rpx;
+  color: #F27C5F;
+}
+.bgimage{
+  width: 750rpx;
+  height: 450rpx;
+}
+.image{
+  position: absolute;
+  top: 380rpx;
+  left: 40rpx;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border:10rpx solid #fff;
+}
+
+.nav{
+  width: 750rpx;
+  height: 80rpx;
+  border-top: 6rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+.nav>view{
+  width: 250rpx;
+  line-height: 80rpx;
+  text-align: center;
+  transition: all 0.4s;
+}
+.nav>view.active{
+  color: #F27C5F;
+  border-bottom: 1rpx solid #F27C5F;
+}

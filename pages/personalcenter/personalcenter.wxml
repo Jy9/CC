@@ -1,0 +1,28 @@
+<!--personalcenter.wxml-->
+<view class='header'>
+  <view class='header_back' catchtap='header_back'>《返回</view>
+  <image mode='aspectFill' src='{{iconUrl}}photo1.jpg' class='bgimage'></image>
+  <image mode='aspectFill' src='{{iconUrl}}photo.jpg' class='image'></image>
+  <view class='name'>贾越</view>
+  <view class='praise'><image src='{{iconUrl}}hreart.png'></image><text>122</text></view>
+  <view class='birthday'>1994/12/17</view>
+  <view class='wxnum'>微信：15601215226</view>
+  <view class='address'>住址：海淀区 朱芳路</view>
+  <view class='register'>户籍：榆林市 吴堡县</view>
+  <view class='introduce'>介绍 介绍</view>
+</view>
+
+<view class='nav fs32'>
+  <view catchtap='nav1' class='lt {{navclass.nav1class}}'>最新发布</view>
+  <view catchtap='nav2' class='lt {{navclass.nav2class}}'>最新评论</view>
+  <view catchtap='nav3' class='lt {{navclass.nav3class}}'>热门</view>
+</view>
+
+<!--最新发布-->
+<view></view>
+
+<!--最新评论-->
+<view></view>
+
+<!--热门-->
+<view></view>

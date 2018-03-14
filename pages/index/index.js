@@ -16,62 +16,6 @@ Page({
           image:"photo.jpg",
           praise:112
         }, {
-          date: "2108/3/13",
-          title: "我是开发者",
-          name: "贾越",
-          details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-          image: "photo1.jpg",
-          praise: 112
-            }, {
-                date: "2108/3/13",
-                title: "我是开发者",
-                name: "贾越",
-                details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-                image: "photo1.jpg",
-                praise: 112
-        }, {
-            date: "2108/3/13",
-            title: "我是开发者",
-            name: "贾越",
-            details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-            image: "photo1.jpg",
-            praise: 112
-            }, {
-                date: "2108/3/13",
-                title: "我是开发者",
-                name: "贾越",
-                details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-                image: "photo1.jpg",
-                praise: 112
-        }, {
-            date: "2108/3/13",
-            title: "我是开发者",
-            name: "贾越",
-            details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-            image: "photo1.jpg",
-            praise: 112
-            }, {
-                date: "2108/3/13",
-                title: "我是开发者",
-                name: "贾越",
-                details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-                image: "photo1.jpg",
-                praise: 112
-        }, {
-            date: "2108/3/13",
-            title: "我是开发者",
-            name: "贾越",
-            details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-            image: "photo1.jpg",
-            praise: 112
-            }, {
-                date: "2108/3/13",
-                title: "我是开发者",
-                name: "贾越",
-                details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-                image: "photo1.jpg",
-                praise: 112
-        }, {
             date: "2108/3/13",
             title: "我是开发者",
             name: "贾越",
@@ -91,5 +35,20 @@ Page({
               })
           }
       });*/
-   }
+   },
+  peoplelist:function(){
+    wx.navigateTo({
+      url: '../peoplelist/peoplelist'
+    })
+  },
+  about: function () {
+    wx.navigateTo({
+      url: '../about/about'
+    })
+  },
+  personalcenter:function(){
+    wx.navigateTo({
+      url: '../personalcenter/personalcenter'
+    })
+  }
 })

@@ -1,0 +1,9 @@
+<!--peoplelist.wxml-->
+<view class='header fs36' bindtap='headerback'>《返回</view>
+<view wx:for='{{users}}' wx:for-item='user' class='user' uid='{{user.uid}}' catchtap='userinfo'>
+  <image class='image' src='{{iconUrl+user.image}}' mode='aspectFill'></image>
+  <view class='name fs32'>{{user.name}}</view>
+  <view class='birthday fs28'>{{user.birthday}}</view>
+  <view class='address fs36'>{{user.address}}</view>
+  <view class='register fs28'>{{user.register}}</view>
+</view>

@@ -1,0 +1,37 @@
+/**about.wxss**/
+page{
+  padding-top: 140rpx;
+}
+.header{
+  width: 750rpx;
+  height: 140rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+  line-height: 40rpx;
+  padding-top: 80rpx;
+  box-sizing:border-box;
+  padding-left: 20rpx;
+  position: fixed;
+  top: 0rpx;
+}
+
+.relation,.synopsis,.peoplenum{
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+}
+.synopsis{
+  margin-top: 40rpx;
+}
+.peoplenum{
+  margin-top: 30rpx;
+}
+.relation{
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  color: #666;
+}
+.num{
+  margin-top: 10rpx;
+  color: #999;
+}
