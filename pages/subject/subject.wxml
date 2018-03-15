@@ -9,7 +9,7 @@
     <text class='lt'>发布者：{{contents.name}}</text>   
     <text class='fs28 lt'>{{contents.date}}</text>
     <view class='praise'>
-      <image src='{{iconUrl}}heart.png'></image>
+      <image src='{{iconUrl}}heartactive.png'></image>
       <text class='fs28'>{{contents.praise}}</text>
     </view>
     </view>

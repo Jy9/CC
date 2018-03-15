@@ -86,13 +86,22 @@
   border-bottom: 1rpx solid #eee;
   transition: margin 0.8s;
 }
-.nav>view:first-child{
-    width: 750rpx;
-    border-bottom: 6rpx solid #eee;
-    border-top: 1rpx dashed #eee;
+.nav>view:first-child,.nav>view:nth-child(2){
+    border-bottom: 12rpx solid #eee;
     position: absolute;
     top: -80rpx;
+    left: 0rpx;
     background: #fff;
+    box-sizing: border-box;
+}
+.nav>view:first-child{
+  border-top: 1rpx solid #F27C5F;
+  background: #F27C5F;
+  color: #fff;
+}
+.nav>view:nth-child(2){
+  left: 375rpx;
+  border-top: 1rpx dashed #eee;
 }
 .nav>view{
   width: 375rpx;
@@ -109,6 +118,8 @@
     width: 750rpx;
     background: #fff;
     position: relative;
+    overflow: hidden;
+    transition: height 1s;
 }
 .content>view{
     position: absolute;

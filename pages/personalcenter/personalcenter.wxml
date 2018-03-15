@@ -14,13 +14,14 @@
 </view>
 
 <view class='nav fs32' style='margin-top:{{unfold.height}}'>
-    <view catchtap='openheader'>展开{{unfold.cont}} </view>
+  <view catchtap='publish'>发表文章</view>
+  <view catchtap='openheader'>{{unfold.cont}}</view>
   <view catchtap='nav1' class='lt {{navclass.nav1class}}'>最新发布</view>
   <view catchtap='nav2' class='lt {{navclass.nav2class}}'>热门</view>
 </view>
 
-<view class='content'>
-    <view class='lt {{navclass.content1class}}'>
+<view class='content' style='height:{{contH}}'>
+    <view class='lt {{navclass.content1class}}' id="content1">
         <view class="containers" wx:for="{{content1}}" wx:for-item="contents" wx:key="content1">
 	<view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
@@ -29,7 +30,7 @@
     <text class='lt'>发布者：{{contents.name}}</text>   
     <text class='fs28 lt'>{{contents.date}}</text>
     <view class='praise'>
-      <image src='{{iconUrl}}heart.png'></image>
+      <image src='{{iconUrl}}heartactive.png'></image>
       <text class='fs28'>{{contents.praise}}</text>
     </view>
     </view>
@@ -47,7 +48,7 @@
     <text class='lt'>发布者：{{contents.name}}</text>   
     <text class='fs28 lt'>{{contents.date}}</text>
     <view class='praise'>
-      <image src='{{iconUrl}}heart.png'></image>
+      <image src='{{iconUrl}}heartactive.png'></image>
       <text class='fs28'>{{contents.praise}}</text>
     </view>
     </view>

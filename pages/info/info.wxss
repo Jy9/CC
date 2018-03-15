@@ -1,0 +1,40 @@
+/**info.wxss**/
+page{
+  padding-top: 140rpx;
+}
+
+.header{
+  width: 750rpx;
+  height: 140rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+  line-height: 40rpx;
+  padding-top: 80rpx;
+  box-sizing:border-box;
+  padding-left: 20rpx;
+  position: absolute;
+  top: 0rpx;
+  z-index: 1;
+}
+
+.footer{
+  width: 750rpx;
+  height: 120rpx;
+  border-top: 12rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+.footer>view{
+  width: 580rpx;
+  line-height: 60rpx;
+  margin-top: 50rpx;
+  margin-left: 20rpx;
+  padding-left: 20rpx;
+  box-sizing:border-box;
+  border:1rpx solid #eee;
+  border-radius: 12rpx;
+}
+.footer>image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 10rpx;
+}

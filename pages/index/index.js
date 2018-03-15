@@ -10,6 +10,7 @@ Page({
     var thisData = this;
     thisData.setData({
         content:[{
+          id:1,
           date:"2108/3/13",
           title:"我是开发者",
           name:"贾越",
@@ -17,6 +18,7 @@ Page({
           image:"photo.jpg",
           praise:112
         }, {
+          id:2,
             date: "2108/3/13",
             title: "我是开发者",
             name: "贾越",
@@ -70,8 +72,14 @@ Page({
   subject:function(e){
     if(e.target.id != ""){
       wx.navigateTo({
-        url: '../subject/subject?id=' + e.target.id+'&name='
+        url: '../subject/subject?id=' + e.target.id
       })
     }
+  },
+  content:function(e){
+    console.log(e.currentTarget.id)
+    wx.navigateTo({
+      url: '../info/info?id=' + e.currentTarget.id
+    })
   }
 })

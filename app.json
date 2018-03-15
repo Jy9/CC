@@ -5,7 +5,8 @@
         "pages/peoplelist/peoplelist",
         "pages/about/about",
         "pages/personalcenter/personalcenter",
-        "pages/subject/subject"
+        "pages/subject/subject",
+        "pages/info/info"
     ],
     "window": {
         "navigationStyle": "custom",

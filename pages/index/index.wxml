@@ -6,7 +6,7 @@
       <view class='lt' id='{{sub.id}}' wx:key='subs' wx:for='{{subs}}' wx:for-item='sub'>{{sub.name}}</view>
     </view>
   </view>
-	<view class="containers" wx:for="{{content}}" wx:for-item="contents" wx:key="index">
+	<view class="containers" id='{{contents.id}}' catchtap='content' wx:for="{{content}}" wx:for-item="contents" wx:key="index">
 	<view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
     </view>
@@ -14,7 +14,7 @@
     <text class='lt'>发布者：{{contents.name}}</text>   
     <text class='fs28 lt'>{{contents.date}}</text>
     <view class='praise'>
-      <image src='{{iconUrl}}heart.png'></image>
+      <image src='{{iconUrl}}heartactive.png'></image>
       <text class='fs28'>{{contents.praise}}</text>
     </view>
     </view>

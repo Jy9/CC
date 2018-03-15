@@ -1,0 +1,7 @@
+<!--info.wxml-->
+<view class='header fs36' bindtap='headerback'>《返回</view>
+
+<view class='footer'>
+  <view class='lt'>快来写下你的想法吧！</view>
+  <image class='rt' src='{{iconUrl}}heart.png'></image>
+</view>
