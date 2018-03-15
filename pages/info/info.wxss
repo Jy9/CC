@@ -1,6 +1,7 @@
 /**info.wxss**/
 page{
   padding-top: 140rpx;
+  padding-bottom: 100rpx;
 }
 
 .header{
@@ -17,24 +18,176 @@ page{
   z-index: 1;
 }
 
-.footer{
-  width: 750rpx;
-  height: 120rpx;
-  border-top: 12rpx solid #eee;
+.body{
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 40rpx;
   border-bottom: 1rpx solid #eee;
 }
-.footer>view{
-  width: 580rpx;
+.body>.title{
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+.body>.date{
+  margin-bottom: 10rpx;
+  color: #666;
+}
+.subject{
+  border-radius: 12rpx;
+  border: 1rpx solid #F27C5F;
+  padding: 0rpx 10rpx;
+  position: absolute;
+  top: 70rpx;
+  left: 200rpx;
+}
+.body>.praise{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 90rpx;
+  right: 20rpx;
+}
+.body>.praise>image{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.body>.praise>text{
+  position: absolute;
+  top: -10rpx;
+  left: -70rpx;
+  border-bottom: 1rpx solid #F27C5F;
+  padding: 0rpx 10rpx;
+  border-radius: 12rpx;
+  color: #F27C5F;
+}
+.bodycontent{
+  padding-top: 40rpx;
+}
+.bodycontent>text{
+  display: block;
+  margin-top: 40rpx;
+}
+.text{
+  font-weight: 900;
+  color: #666;
+}
+.bodycontent>image{
+  width: 750rpx;
+  margin-top: 40rpx;
+}
+
+.hr{
+  height: 60rpx;
+  background: #fff;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
   line-height: 60rpx;
-  margin-top: 50rpx;
-  margin-left: 20rpx;
   padding-left: 20rpx;
-  box-sizing:border-box;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+  margin-top: 1rpx;
+}
+
+textarea.discusscompile{
+  width: 750rpx;
+  height: 200rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+}
+view.discusscompile{
+  line-height: 80rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+}
+
+.discuss{
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+  overflow: hidden;
+  padding-top: 40rpx;
+}
+.discuss>.distitle{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+.approve,.rubbish{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: w0rpx;
+}
+.approve{
+  right: 200rpx;
+}
+.rubbish{
+  right: 20rpx;
+}
+.approve>image,.rubbish>image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.approve>text,.rubbish>text{
+  position: absolute;
+  top: -10rpx;
+  left: -70rpx;
+  border-right: 1rpx solid #F27C5F;
+  color: #F27C5F;
+  border-radius: 12rpx;
+  padding: 0rpx 10rpx;
+}
+.approve>text{
+  border-color: #e4393c;
+  color: #e4393c;
+}
+.disname{
+  margin-left: 40rpx;
+  width: 600rpx;
+}
+.disdate{
+  width: 600rpx;
+  margin-left: 40rpx;
+  color: #F27C5F;
+}
+.discontent{
+  width: 750rpx;
+  padding: 0rpx 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.footer{
+  width: 750rpx;
+  height: 100rpx;
+  border-top: 1rpx solid #eee;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  background: #fff;
+  z-index: 1;
+}
+.footer>view{
+  width: 560rpx;
+  line-height: 60rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 20rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
   border:1rpx solid #eee;
   border-radius: 12rpx;
 }
 .footer>image{
-  width: 100rpx;
-  height: 100rpx;
-  margin-top: 10rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
 }
