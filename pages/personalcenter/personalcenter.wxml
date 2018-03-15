@@ -21,7 +21,7 @@
 
 <view class='content'>
     <view class='lt {{navclass.content1class}}'>
-        <view class="containers" wx:for="{{content1}}" wx:for-item="contents">
+        <view class="containers" wx:for="{{content1}}" wx:for-item="contents" wx:key="content1">
 	<view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
     </view>
@@ -39,7 +39,7 @@
     <view class="more fs32">加载更多 →_→</view>
     </view>
     <view class='lt {{navclass.content2class}}'>
-        <view class="containers" wx:for="{{content2}}" wx:for-item="contents">
+        <view class="containers" wx:for="{{content2}}" wx:for-item="contents" wx:key="content2">
 	<view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
     </view>

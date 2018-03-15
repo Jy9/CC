@@ -3,7 +3,8 @@ Page({
   data: {
       peoplenum:12,
     iconUrl:"https://raw.githubusercontent.com/Jy9/icon/master/",
-    sexs: ["woman.png","man.png"]
+    sexs: ["woman.png","man.png"],
+    subs:[]
   },
   onLoad: function () {
     var thisData = this;
@@ -22,8 +23,23 @@ Page({
             details: "奥萨蒂哦我的阿斯觉得我啊为基地",
             image: "photo1.jpg",
             praise: 112
-        }]
-      })
+        }],
+        subs:[
+          {
+            id:1,
+            name: "聚会"
+          },{
+            id: 2,
+            name: "拼车"
+          },{
+            id: 3,
+            name: "老家好地方"
+          },{
+            id: 4,
+            name: "北京游玩"
+          }
+        ]
+      });
       /*wx.login({
           success: function (res) {
               wx.request({
@@ -50,5 +66,12 @@ Page({
     wx.navigateTo({
       url: '../personalcenter/personalcenter'
     })
+  },
+  subject:function(e){
+    if(e.target.id != ""){
+      wx.navigateTo({
+        url: '../subject/subject?id=' + e.target.id+'&name='
+      })
+    }
   }
 })

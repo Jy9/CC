@@ -4,7 +4,8 @@
         "pages/logs/logs",
         "pages/peoplelist/peoplelist",
         "pages/about/about",
-        "pages/personalcenter/personalcenter"
+        "pages/personalcenter/personalcenter",
+        "pages/subject/subject"
     ],
     "window": {
         "navigationStyle": "custom",

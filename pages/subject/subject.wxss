@@ -1,0 +1,90 @@
+/**subject.wxss**/
+page{
+  padding-top: 140rpx;
+}
+
+.header{
+  width: 750rpx;
+  height: 140rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+  line-height: 40rpx;
+  padding-top: 80rpx;
+  box-sizing:border-box;
+  padding-left: 20rpx;
+  position: fixed;
+  top: 0rpx;
+  z-index: 1;
+}
+
+.containers{
+	width:750rpx;
+	height:260rpx;
+	border-bottom:1rpx solid #eee;
+  position: relative;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.containers>.image{
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 60rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+.image>image{
+    height: 180rpx;
+    width: 180rpx;
+}
+.date{
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+.date>text:nth-child(2){
+  margin-left: 30rpx;
+  color: #F27C5F;
+}
+.praise{
+    width: 120rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+}
+.praise>text{
+  position: absolute;
+  top: 0rpx;
+  left: 60rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.praise>image{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.title{
+  color: #666;
+  margin-top: 20rpx;
+}
+.details{
+  width: 460rpx;
+  margin-top: 10rpx;
+  line-height: 40rpx;
+  height: 120rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.more{
+  width: 750rpx;
+  height: 110rpx;
+  border-bottom:12rpx solid #eee;
+  text-align: center;
+  line-height: 110rpx;
+}

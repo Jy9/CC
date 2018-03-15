@@ -2,15 +2,11 @@
 <view class="container" style='height:{{containerHeight}}'>
   <view class='subject'>
     <view class='fs32'>热门专题：</view>
-    <view class='fs28'>
-      <view class='lt'>拼阿斯顿车</view>
-      <view class='lt'>拼阿三车</view>
-      <view class='lt'>拼是车</view>
-      <view class='lt'>拼车</view>
-      <view class='lt'>拼请问车</view>
+    <view class='fs28' bindtap='subject'>
+      <view class='lt' id='{{sub.id}}' wx:key='subs' wx:for='{{subs}}' wx:for-item='sub'>{{sub.name}}</view>
     </view>
   </view>
-	<view class="containers" wx:for="{{content}}" wx:for-item="contents">
+	<view class="containers" wx:for="{{content}}" wx:for-item="contents" wx:key="index">
 	<view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
     </view>

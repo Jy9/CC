@@ -13,6 +13,7 @@ page{
   padding-left: 20rpx;
   position: fixed;
   top: 0rpx;
+  z-index: 1;
 }
 .user{
   position: relative;
