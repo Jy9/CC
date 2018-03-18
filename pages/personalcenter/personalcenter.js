@@ -149,12 +149,9 @@ Page({
       console.log("发表文章")
     },
     set:function(){
-        wx.showToast({
-            title: '暂时没有编辑功能',
+        wx.navigateTo({
+            url: '../setuse/setuse'
         })
-        /*wx.navigateTo({
-            url: '',
-        })*/
     },
     nav1: function () {
         var thisObj = this;

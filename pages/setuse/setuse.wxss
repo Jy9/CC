@@ -1,0 +1,51 @@
+/*setuse.wxss*/
+page{
+    padding: 0rpx 20rpx;
+    padding-top: 200rpx;
+    padding-bottom: 80rpx;
+}
+.header{
+    height: 80rpx;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    box-sizing: border-box;
+    border-top: 1rpx solid #F27C5F;
+}
+.header>view{
+    width: 375rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+.header>view:last-child{
+    background: #F27C5F;
+    color: #fff;
+}
+
+.name{
+    overflow: hidden;
+}
+.name>input{
+    margin-left: 20rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.sex,picker,.introduce,.introduce>textarea{
+    margin-top: 40rpx;
+}
+
+.sex>label:last-child{
+    margin-left: 40rpx;
+}
+
+.bgimage,.titleimage{
+    width: 375rpx;
+    height: 180rpx;
+}
+.bgimage>image,.titleimage>image{
+    width: 180rpx;
+    height: 180rpx;
+}
+.bgimage>text,.titleimage>text{
+    display: block;
+}

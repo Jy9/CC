@@ -9,7 +9,7 @@
   <view class='wxnum fs32'>微信：15601215226</view>
   
   <view class='address fs28' style='opacity:{{headerOP}}'>住址：<text>海淀区 朱房路 朱芳后坟地</text></view>
-  <view class='birthday fs32' style='opacity:{{headerOP}}'>生日：<text>1994/12/17</text></view>
+  <view class='birthday fs32' style='opacity:{{headerOP}}'>生日：<text>1994-12-17</text></view>
   <view class='introduce fs32' style='opacity:{{headerOP}}'>介绍 介绍</view>
 </view>
 
