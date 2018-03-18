@@ -1,9 +1,10 @@
 <!--personalcenter.wxml-->
 <view class='header'>
   <view class='header_back fs36' catchtap='header_back'>《返回</view>
+  <image class='set' src='{{iconUrl}}set.png' catchtap='set'></image>
   <image mode='aspectFill' src='{{iconUrl}}photo1.jpg' class='bgimage'></image>
   <image mode='aspectFill' src='{{iconUrl}}photo.jpg' class='titleimage'></image>
-  <view class='name fs36'>贾越</view>
+  <view class='name fs36'><text class='lt'>贾越</text><image src='{{iconUrl}}man.png' class='lt'></image></view>
   <view class='headerpraise'><image src='{{iconUrl}}heart.png'></image><text class='fs28'>122</text></view>
   <view class='wxnum fs32'>微信：15601215226</view>
   
@@ -17,7 +18,8 @@
   <view catchtap='openheader'>{{unfold.cont}}</view>
   <view catchtap='nav1' class='lt {{navclass.nav1class}}'>最新发布</view>
   <view catchtap='nav2' class='lt {{navclass.nav2class}}'>热门</view>
-  <view catchtap='nav3' class='lt {{navclass.nav3class}}' wx:if='{{utype=="manage"}}'>待审核</view>
+  <view catchtap='nav3' class='lt {{navclass.nav3class}}'>我的关注</view>
+  <view catchtap='nav4' class='lt {{navclass.nav4class}}' wx:if='{{utype=="manage"}}'>待审核</view>
 </view>
 
 <view class='content' style='height:{{contH}}'>
@@ -57,8 +59,35 @@
 	</view>
     <view class="more fs32">加载更多 →_→</view>
     </view>
-    <view class='lt {{navclass.content3class}}' id='content3' wx:if='{{utype=="manage"}}'>
+    <!--<view class='lt {{navclass.content3class}}' id='content3'>
         <view class="containers" wx:for="{{content3}}" wx:for-item="contents" wx:key="content3">
+	<view class='image'>
+      <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
+    </view>
+    <view class='date fs32'>
+    <text class='lt'>发布者：{{contents.name}}</text>   
+    <text class='fs28 lt'>{{contents.date}}</text>
+    <view class='praise'>
+      <image src='{{iconUrl}}heartactive.png'></image>
+      <text class='fs28'>{{contents.praise}}</text>
+    </view>
+    </view>
+    <view class='title fs36'>{{contents.title}}</view>
+    <view class='details fs28'>{{contents.details}}</view>
+	</view>
+    <view class="more fs32">加载更多 →_→</view>
+    </view>-->
+    <view class='lt {{navclass.content3class}}' id='content3'>
+        <view wx:for='{{users}}' wx:for-item='user' class='user' uid='{{user.uid}}' catchtap='userinfo' wx:key="users">
+            <image class='userimage' src='{{iconUrl+user.image}}' mode='aspectFill'></image>
+            <view class='username fs32'>{{user.name}}</view>
+            <view class='userbirthday fs28'>{{user.birthday}}</view>
+            <view class='useraddress fs36'>{{user.address}}</view>
+            <view class='userregister fs28'>{{user.register}}</view>
+        </view>
+    </view>
+    <view class='lt {{navclass.content4class}}' id='content4' wx:if='{{utype=="manage"}}'>
+        <view class="containers" wx:for="{{content4}}" wx:for-item="contents" wx:key="content4">
 	<view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
     </view>
