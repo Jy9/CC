@@ -8,16 +8,16 @@
   <view class='wxnum fs32'>微信：15601215226</view>
   
   <view class='address fs28' style='opacity:{{headerOP}}'>住址：<text>海淀区 朱房路 朱芳后坟地</text></view>
-  <view class='register fs28' style='opacity:{{headerOP}}'>户籍：<text>榆林市 吴堡县</text></view>
   <view class='birthday fs32' style='opacity:{{headerOP}}'>生日：<text>1994/12/17</text></view>
   <view class='introduce fs32' style='opacity:{{headerOP}}'>介绍 介绍</view>
 </view>
 
-<view class='nav fs32' style='margin-top:{{unfold.height}}'>
+<view class='nav fs32 {{utype}}' style='margin-top:{{unfold.height}}'>
   <view catchtap='publish'>发表文章</view>
   <view catchtap='openheader'>{{unfold.cont}}</view>
   <view catchtap='nav1' class='lt {{navclass.nav1class}}'>最新发布</view>
   <view catchtap='nav2' class='lt {{navclass.nav2class}}'>热门</view>
+  <view catchtap='nav3' class='lt {{navclass.nav3class}}' wx:if='{{utype=="manage"}}'>待审核</view>
 </view>
 
 <view class='content' style='height:{{contH}}'>
@@ -41,6 +41,24 @@
     </view>
     <view class='lt {{navclass.content2class}}'>
         <view class="containers" wx:for="{{content2}}" wx:for-item="contents" wx:key="content2">
+	<view class='image'>
+      <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
+    </view>
+    <view class='date fs32'>
+    <text class='lt'>发布者：{{contents.name}}</text>   
+    <text class='fs28 lt'>{{contents.date}}</text>
+    <view class='praise'>
+      <image src='{{iconUrl}}heartactive.png'></image>
+      <text class='fs28'>{{contents.praise}}</text>
+    </view>
+    </view>
+    <view class='title fs36'>{{contents.title}}</view>
+    <view class='details fs28'>{{contents.details}}</view>
+	</view>
+    <view class="more fs32">加载更多 →_→</view>
+    </view>
+    <view class='lt {{navclass.content3class}}' id='content3' wx:if='{{utype=="manage"}}'>
+        <view class="containers" wx:for="{{content3}}" wx:for-item="contents" wx:key="content3">
 	<view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
     </view>

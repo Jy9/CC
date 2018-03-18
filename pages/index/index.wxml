@@ -26,11 +26,11 @@
   <view class="cont">
     <image src='{{iconUrl}}first_background.jpg'></image>
     <view class='fs28 text'>
-        <text class='lt' catchtap='peoplelist'>成员列表</text>
+        <text class='lt' catchtap='peoplelist'>打赏简文</text>
         <text class='lt' catchtap='personalcenter'>个人中心</text>
         <text class='lt' catchtap='about'>关于软件</text>
     </view>
-    <view class='fs28'>榆林老乡北京平台</view>
+    <view class='fs28'>简文</view>
   </view>
 </view>
 

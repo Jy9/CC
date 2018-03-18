@@ -55,8 +55,9 @@ Page({
       });*/
    },
   peoplelist:function(){
-    wx.navigateTo({
-      url: '../peoplelist/peoplelist'
+    wx.showToast({
+        title: '暂不提供打赏功能',
+        icon:"none"
     })
   },
   about: function () {

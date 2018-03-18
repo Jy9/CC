@@ -92,14 +92,22 @@ page{
   margin-top: 1rpx;
 }
 
-textarea.discusscompile{
-  width: 750rpx;
-  height: 200rpx;
-  padding: 10rpx 20rpx;
-  box-sizing: border-box;
-  border-bottom: 1rpx solid #eee;
+.discusscompile,.discusscompile>textarea{
+    width: 750rpx;
+    height: 200rpx;
+    padding: 10rpx 20rpx;
+    box-sizing: border-box;
 }
-view.discusscompile{
+.discusscompile{
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+}
+.discusscompile>textarea{
+    position: absolute;
+    top:0rpx;
+    left: 0rpx;
+}
+.discusssublime{
   line-height: 80rpx;
   text-align: center;
   border-bottom: 1rpx solid #eee;
@@ -183,6 +191,7 @@ view.discusscompile{
   box-sizing: border-box;
   border:1rpx solid #eee;
   border-radius: 12rpx;
+  overflow: hidden;
 }
 .footer>image{
   position: absolute;

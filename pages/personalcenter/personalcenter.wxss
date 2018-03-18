@@ -59,16 +59,13 @@
     top: 640rpx;
     left: 20rpx;
 }
-.birthday,.register{
+.birthday{
     top: 680rpx;
 }
-.birthday>text,.register>text,.address>text{
+.birthday>text,.address>text{
     color: #666;
 }
 .birthday{
-    left: 320rpx;
-}
-.register{
     left: 20rpx;
 }
 .introduce{
@@ -94,20 +91,25 @@
     background: #fff;
     box-sizing: border-box;
 }
-.nav>view:first-child{
-  border-top: 1rpx solid #F27C5F;
-  background: #F27C5F;
-  color: #fff;
-}
-.nav>view:nth-child(2){
-  left: 375rpx;
-  border-top: 1rpx dashed #eee;
-}
 .nav>view{
   width: 375rpx;
   line-height: 80rpx;
   text-align: center;
   transition: all 0.4s;
+}
+.nav.manage>view{
+  width: 250rpx;
+}
+.nav>view:first-child{
+  border-top: 1rpx solid #F27C5F;
+  background: #F27C5F;
+  color: #fff;
+  width: 375rpx;
+}
+.nav>view:nth-child(2){
+  left: 375rpx;
+  width: 375rpx;
+  border-top: 1rpx dashed #eee;
 }
 .nav>view.active{
   color: #F27C5F;
