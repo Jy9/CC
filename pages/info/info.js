@@ -51,6 +51,17 @@ Page({
           }
       }
   },
+  pass:function(){
+      if (this.data.ifpass) {
+          wx: wx.showToast({
+              title: '点赞成功'
+          })
+      }else{
+          wx: wx.showToast({
+              title: '审核成功'
+          })
+      }
+  },
   bindinput:function(e){
       this.setData({
           discussval: e.detail.value 
