@@ -1,0 +1,18 @@
+<!--publish.wxml-->
+<view class='header' catchtap='back'>《 取消</view>
+
+<view class='publish'>
+  <input placeholder='标题' bindinput='inputchange' class='fs46'></input>
+  <textarea placeholder='正文' class='fs36' bindinput='textareainput' value='{{thistextarea}}'></textarea>
+</view>
+
+<view class='set'>
+  <view class='lt' catchtap='addText'>添加段落</view>
+  <view class='lt' catchtap='addImg'>添加图片</view>
+  <view class='lt' catchtap='overstriking'>A</view>
+</view>
+
+<view class='footer'>
+  <view class='lt'>预览</view>
+  <view class='lt'>发表</view>
+</view>

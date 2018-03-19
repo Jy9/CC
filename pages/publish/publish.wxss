@@ -1,0 +1,65 @@
+/*publish.wxss*/
+page{
+  padding-top: 120rpx;
+  padding-bottom: 80rpx;
+}
+.header,.footer{
+  position: fixed;
+  left: 0rpx;
+  box-sizing: border-box;
+}
+.header{
+  top: 0rpx;
+  height: 120rpx;
+  line-height: 40rpx;
+  padding-top: 80rpx;
+  padding-left: 20rpx;
+}
+.footer{
+  bottom: 0rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-top: 1rpx solid #F27C5F;
+}
+.footer>view{
+  width: 375rpx;
+}
+.footer>view:last-child{
+  background: #F27C5F;
+  color: #fff;
+}
+
+.publish>input,.publish>textarea{
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.publish>input{
+  color: #666;
+  height: 90rpx;
+}
+.publish>textarea{
+  width: 750rpx;
+  border-top: 1rpx solid #eee;
+  padding: 10rpx 20rpx;
+}
+
+.set{
+  position: absolute;
+  bottom: 80rpx;
+  border-top: 1rpx solid #eee;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.set>view{
+  width: 315rpx;
+  text-align: center;
+  border-right: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+.set>view:last-child{
+  width: 120rpx;
+  font-weight: 900;
+  border:none;
+}

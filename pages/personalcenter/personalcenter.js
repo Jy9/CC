@@ -146,7 +146,9 @@ Page({
         }
     },
     publish:function(){
-      console.log("发表文章")
+      wx.navigateTo({
+        url: '../publish/publish',
+      })
     },
     set:function(){
         wx.navigateTo({

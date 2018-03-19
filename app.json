@@ -6,7 +6,8 @@
         "pages/personalcenter/personalcenter",
         "pages/subject/subject",
         "pages/info/info",
-        "pages/setuse/setuse"
+        "pages/setuse/setuse",
+        "pages/publish/publish"
     ],
     "window": {
         "navigationStyle": "custom",
