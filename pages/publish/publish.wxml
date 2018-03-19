@@ -1,10 +1,14 @@
 <!--publish.wxml-->
 <view class='header' catchtap='back'>《 取消</view>
 
-<view class='publish'>
-  <input placeholder='标题' bindinput='inputchange' class='fs46'></input>
-  <textarea placeholder='正文' class='fs36' bindinput='textareainput' value='{{thistextarea}}'></textarea>
+<view class='title' wx:if='{{isText}}'>
+    <view>
+        <input maxlength='12' value='{{title}}' auto-focus='true' bindinput='titleset'></input>
+        <view catchtap='titleok'>确定</view>
+    </view>
 </view>
+
+<textarea wx:else class='publish' focus='{{textfocus}}' placeholder='正文' class='fs36' bindinput='textareainput' value='{{thistextarea}}'></textarea>
 
 <view class='set'>
   <view class='lt' catchtap='addText'>添加段落</view>
