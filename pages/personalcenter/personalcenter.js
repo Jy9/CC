@@ -39,17 +39,17 @@ Page({
                 {
                     uid: 1,
                     name: "贾越",
+                    sex:1,
                     birthday: "1994/12/17",
                     image: "photo.jpg",
-                    address: "海淀区 朱芳路",
-                    register: "榆林市 吴堡县"
+                    address: "海淀区 朱芳路"
                 }, {
                     uid: 2,
                     name: "贾越",
+                    sex:0,
                     birthday: "1994/12/17",
                     image: "photo1.jpg",
-                    address: "海淀区 朱芳路",
-                    register: "榆林市 吴堡县"
+                    address: "海淀区 朱芳路"
                 }
             ]
         })

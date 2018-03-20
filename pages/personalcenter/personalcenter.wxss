@@ -222,15 +222,15 @@
 }
 .user{
   position: relative;
-  height: 220rpx;
+  height: 160rpx;
   border-bottom:1rpx dashed #eee;
 }
 .user>view,.user>image{
   position: absolute;
 }
 .userimage{
-  width: 180rpx;
-  height: 180rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 12rpx;
   top: 20rpx;
   left: 20rpx;
@@ -239,15 +239,16 @@
   top: 30rpx;
   left: 240rpx;
 }
+.username>image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 40rpx;
+}
 .userbirthday{
   top: 30rpx;
   right: 20rpx;
 }
 .useraddress{
   top: 100rpx;
-  left: 240rpx;
-}
-.userregister{
-  top: 160rpx;
   left: 240rpx;
 }

@@ -3,8 +3,17 @@
 
 <view class='title' wx:if='{{isText}}'>
     <view>
-        <input maxlength='12' value='{{title}}' auto-focus='true' bindinput='titleset'></input>
-        <view catchtap='titleok'>确定</view>
+        <input maxlength='12' placeholder='请输入文章名称' value='{{title}}' auto-focus='true' bindinput='titleset'></input>
+        <view>
+            <view catchtap='select' class='lt'>{{label}}</view>
+            <view catchtap='titleok' class='lt'>确定</view>
+        </view>
+    </view>
+</view>
+
+<view class='label' wx:if='{{isselect}}'>
+    <view catchtap='selectlabel'>
+        <view wx:for='{{labels}}' wx:for-item='label' wx:key='label' id='{{label}}'>{{label}}</view>
     </view>
 </view>
 

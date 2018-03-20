@@ -46,6 +46,8 @@ page{
     position: fixed;
     top: 200rpx;
     left: 50rpx;
+    border-radius: 12rpx;
+    overflow:hidden;
 }
 .title>view>input{
     position: absolute;
@@ -62,7 +64,44 @@ page{
     position: absolute;
     bottom: 0rpx;
     left: 0rpx;
+    border-top: 1rpx solid #F27C5F;
+}
+.title>view>view>view{
+    width: 325rpx;
+}
+.title>view>view>view:last-child{
+    background: #F27C5F;
+    color: #fff;
+}
+
+.label{
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background: #fff;
+}
+.label>view{
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    background: #fff;
+    border-radius: 12rpx;
+    box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+}
+.label>view>view{
+    line-height: 80rpx;
+    text-align: center;
+    box-sizing: border-box;
     border-top: 1rpx solid #eee;
+}
+.label>view>view:first-child{
+    border:none;
 }
 
 .publish{
@@ -88,7 +127,7 @@ page{
 }
 
 .preview{
-	width:750vw;
+	width:100vw;
 	height:100vh;
 	background:#fff;
 	position:fixed;
@@ -97,6 +136,7 @@ page{
   padding-top: 120rpx;
   box-sizing: border-box;
   z-index: 2;
+  overflow-y: scroll;
 }
 .preview>view:first-child{
   position: absolute;
@@ -106,12 +146,13 @@ page{
   box-sizing: border-box;
   line-height: 60rpx;
 }
-
 .body{
   width: 750rpx;
   padding: 0rpx 20rpx;
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
+  top: 120rpx;
+  left: 0rpx;
   padding-bottom: 80rpx;
 }
 .body>.bodytitle{
@@ -127,7 +168,7 @@ page{
   border: 1rpx solid #F27C5F;
   padding: 0rpx 10rpx;
   position: absolute;
-  top: 70rpx;
+  top: 90rpx;
   left: 200rpx;
 }
 .body>.bodypraise{
@@ -155,6 +196,7 @@ page{
 }
 .bodycontent{
   padding-top: 40rpx;
+  overflow: hidden;
 }
 .bodycontent>view>text{
   display: block;
