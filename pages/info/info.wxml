@@ -2,19 +2,19 @@
 <view class='header fs36' bindtap='headerback'>《返回</view>
 
 <view class='body'>
-  <view class='title fs46'>我是标题 标题 标标题</view>
-  <view class='date fs28'>2018/3/15</view>
-  <view class='subject fs28'>拼车</view>
-  <view class='people fs32'>作者：贾越</view>
-  <view class='praise'>
+  <view class='bodytitle fs46'>{{article.title}}</view>
+  <view class='bodydate fs28'>{{article.date}}</view>
+  <view class='bodysubject fs28'>{{article.label}}</view>
+  <view class='bodypeople fs32'>作者：{{article.name}}</view>
+  <view class='bodypraise'>
     <image src='{{iconUrl}}heartactive.png' mode='aspectFill'></image>
-    <text class='fs28'>122</text>
+    <text class='fs28'>{{article.like}}</text>
   </view>
   <view class='bodycontent fs32'>
-    <text space='emsp'>  我不是标题我不是标题我不是标题我不是标题我不是标<text class='text'>题我不是标题我</text></text>
-    <text space='emsp'>不是标题我不是标题我不是标题我不是标题我不是标题我不是标题</text>
-    <image mode='widthFix' src='{{iconUrl}}heart.png'></image>
-    <text space='emsp'>我不是标题我不是标题</text>
+    <view wx:for='{{article.articles}}' wx:for-item='label' wx:key='label'>
+      <text wx:if='{{label.type=="text"}}' space='emsp'>{{label.text}}</text>
+      <image mode='widthFix' wx:if='{{label.type=="image"}}' src='{{label.src}}'></image>
+    </view>
   </view>
 </view>
 

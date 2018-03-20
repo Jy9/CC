@@ -19,21 +19,21 @@ page{
 }
 
 .body{
+  width: 750rpx;
   padding: 0rpx 20rpx;
   box-sizing: border-box;
   position: relative;
-  padding-bottom: 40rpx;
-  border-bottom: 1rpx solid #eee;
+  padding-bottom: 80rpx;
 }
-.body>.title{
+.body>.bodytitle{
   margin-top: 20rpx;
   margin-bottom: 10rpx;
 }
-.body>.date{
+.body>.bodydate{
   margin-bottom: 10rpx;
   color: #666;
 }
-.subject{
+.bodysubject{
   border-radius: 12rpx;
   border: 1rpx solid #F27C5F;
   padding: 0rpx 10rpx;
@@ -41,21 +41,21 @@ page{
   top: 70rpx;
   left: 200rpx;
 }
-.body>.praise{
+.body>.bodypraise{
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: 90rpx;
   right: 20rpx;
 }
-.body>.praise>image{
+.body>.bodypraise>image{
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: 0rpx;
   left: 0rpx;
 }
-.body>.praise>text{
+.body>.bodypraise>text{
   position: absolute;
   top: -10rpx;
   left: -70rpx;
@@ -67,16 +67,12 @@ page{
 .bodycontent{
   padding-top: 40rpx;
 }
-.bodycontent>text{
+.bodycontent>view>text{
   display: block;
   margin-top: 40rpx;
 }
-.text{
-  font-weight: 900;
-  color: #666;
-}
-.bodycontent>image{
-  width: 750rpx;
+.bodycontent>view>image{
+  width: 710rpx;
   margin-top: 40rpx;
 }
 

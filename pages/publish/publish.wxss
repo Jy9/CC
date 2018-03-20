@@ -81,13 +81,86 @@ page{
   line-height: 80rpx;
 }
 .set>view{
-  width: 315rpx;
+  width: 375rpx;
   text-align: center;
   border-right: 1rpx solid #eee;
   box-sizing: border-box;
 }
-.set>view:last-child{
-  width: 120rpx;
-  font-weight: 900;
-  border:none;
+
+.preview{
+	width:750vw;
+	height:100vh;
+	background:#fff;
+	position:fixed;
+	top:0rpx;
+	left:0rpx;
+  padding-top: 120rpx;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.preview>view:first-child{
+  position: absolute;
+  top: 60rpx;
+  left: 0rpx;
+  padding:0rpx 20rpx;
+  box-sizing: border-box;
+  line-height: 60rpx;
+}
+
+.body{
+  width: 750rpx;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 80rpx;
+}
+.body>.bodytitle{
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+.body>.bodydate{
+  margin-bottom: 10rpx;
+  color: #666;
+}
+.bodysubject{
+  border-radius: 12rpx;
+  border: 1rpx solid #F27C5F;
+  padding: 0rpx 10rpx;
+  position: absolute;
+  top: 70rpx;
+  left: 200rpx;
+}
+.body>.bodypraise{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 90rpx;
+  right: 20rpx;
+}
+.body>.bodypraise>image{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.body>.bodypraise>text{
+  position: absolute;
+  top: -10rpx;
+  left: -70rpx;
+  border-bottom: 1rpx solid #F27C5F;
+  padding: 0rpx 10rpx;
+  border-radius: 12rpx;
+  color: #F27C5F;
+}
+.bodycontent{
+  padding-top: 40rpx;
+}
+.bodycontent>view>text{
+  display: block;
+  margin-top: 40rpx;
+}
+.bodycontent>view>image{
+  width: 710rpx;
+  margin-top: 40rpx;
 }
