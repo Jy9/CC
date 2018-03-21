@@ -1,5 +1,5 @@
 <!--publish.wxml-->
-<view class='header' catchtap='back'>《 取消</view>
+<view class='header' catchtap='previewtap'>预览 》</view>
 
 <view class='title' wx:if='{{isText}}'>
     <view>
@@ -25,7 +25,10 @@
 </view>
 
 <view class='preview' wx:if='{{preview}}'>
-	<view catchtap='previewback'>《返回</view>
+	<view>
+    <view catchtap='previewback' class='lt'>继续编辑</view>
+    <view class='lt'>发表</view>
+  </view>
 	<view class='body'>
     <view class='bodytitle fs46'>{{title}}</view>
   <view class='bodydate fs28'>0000-00-00</view>
@@ -44,7 +47,4 @@
   </view>
 </view>
 
-<view class='footer'>
-  <view class='lt' catchtap='previewtap'>预览</view>
-  <view class='lt'>发表</view>
-</view>
+<view class='footer' catchtap='back'>《 返回</view>
