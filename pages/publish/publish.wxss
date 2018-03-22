@@ -3,6 +3,7 @@ page{
   padding-top: 240rpx;
   padding-bottom: 100rpx;
 }
+
 .header,.footer{
   position: fixed;
   left: 0rpx;
