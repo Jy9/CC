@@ -1,16 +1,24 @@
 <!--personalcenter.wxml-->
-<view class='header'>
+<view class='bg'>
+  <view class='bgshadow'></view>
   <view class='header_back fs36' catchtap='header_back'>《返回</view>
+  <image mode='aspectFill' src='{{userInfo.image}}' class='bgimage'></image>
   <image class='set' src='{{iconUrl}}set.png' catchtap='set'></image>
-  <image mode='aspectFill' src='{{iconUrl}}photo1.jpg' class='bgimage'></image>
-  <image mode='aspectFill' src='{{iconUrl}}photo.jpg' class='titleimage'></image>
-  <view class='name fs36'><text class='lt'>贾越</text><image src='{{iconUrl}}man.png' class='lt'></image></view>
-  <view class='headerpraise'><image src='{{iconUrl}}heart.png'></image><text class='fs28'>122</text></view>
-  <view class='wxnum fs32'>微信：15601215226</view>
-  
-  <view class='address fs28' style='opacity:{{headerOP}}'>住址：<text>海淀区 朱房路 朱芳后坟地</text></view>
-  <view class='birthday fs32' style='opacity:{{headerOP}}'>生日：<text>1994-12-17</text></view>
-  <view class='introduce fs32' style='opacity:{{headerOP}}'>介绍 介绍</view>
+</view>
+<view class='header'>
+  <image mode='aspectFill' src='{{userInfo.image}}' class='titleimage'></image>
+  <view class='name fs36'>
+    <text class='lt'>{{userInfo.name}}</text>
+    <image wx:if='{{userInfo.sex == 1}}' src='{{iconUrl}}man.png' class='lt'></image>
+    <image wx:if='{{userInfo.sex == 2}}' src='{{iconUrl}}woman.png' class='lt'></image>
+  </view>
+  <view class='headerpraise' catchtap='heart'>
+    <image src='{{iconUrl}}heart.png'></image>
+    <text class='fs28'>{{userInfo.hreat}}</text>
+  </view>
+  <view class='wxnum fs32'>城市：{{userInfo.city}}</view>
+
+  <view class='introduce fs32' style='opacity:{{headerOP}}'>{{userInfo.introduce}}</view>
 </view>
 
 <view class='nav fs32 {{utype}}' style='margin-top:{{unfold.height}}'>
@@ -23,67 +31,68 @@
 </view>
 
 <view class='content' style='height:{{contH}}'>
-    <view class='lt {{navclass.content1class}}' id="content1">
-        <view class="containers" wx:for="{{content1}}" wx:for-item="contents" wx:key="content1">
-	<view class='image'>
-      <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
-    </view>
-    <view class='date fs32'>
-    <text class='lt'>发布者：{{contents.name}}</text>   
-    <text class='fs28 lt'>{{contents.date}}</text>
-    <view class='praise'>
-      <image src='{{iconUrl}}heartactive.png'></image>
-      <text class='fs28'>{{contents.praise}}</text>
-    </view>
-    </view>
-    <view class='title fs36'>{{contents.title}}</view>
-    <view class='details fs28'>{{contents.details}}</view>
-	</view>
-    <view class="more fs32">加载更多 →_→</view>
-    </view>
-    <view class='lt {{navclass.content2class}}'>
-        <view class="containers" wx:for="{{content2}}" wx:for-item="contents" wx:key="content2">
-	<view class='image'>
-      <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
-    </view>
-    <view class='date fs32'>
-    <text class='lt'>发布者：{{contents.name}}</text>   
-    <text class='fs28 lt'>{{contents.date}}</text>
-    <view class='praise'>
-      <image src='{{iconUrl}}heartactive.png'></image>
-      <text class='fs28'>{{contents.praise}}</text>
-    </view>
-    </view>
-    <view class='title fs36'>{{contents.title}}</view>
-    <view class='details fs28'>{{contents.details}}</view>
-	</view>
-    <view class="more fs32">加载更多 →_→</view>
-    </view>
-
-    <view class='lt {{navclass.content3class}}' id='content3'>
-        <view wx:for='{{users}}' wx:for-item='user' class='user' uid='{{user.uid}}' catchtap='userinfo' wx:key="users">
-            <image class='userimage' src='{{iconUrl+user.image}}' mode='aspectFill'></image>
-            <view class='username fs36'><text class='lt'>{{user.name}}</text><image class='lt' src='{{iconUrl}}man.png' wx:if='{{user.sex}}'></image><image class='lt' wx:else src='{{iconUrl}}woman.png'></image></view>
-            <view class='userbirthday fs28'>{{user.birthday}}</view>
-            <view class='useraddress fs32'>{{user.address}}</view>
+  <view class='lt {{navclass.content1class}}' id="content1">
+    <view class="containers" wx:for="{{content1}}" wx:for-item="contents" wx:key="content1">
+      <view class='image'>
+        <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
+      </view>
+      <view class='date fs32'>
+        <text class='lt'>发布者：{{contents.name}}</text>
+        <text class='fs28 lt'>{{contents.date}}</text>
+        <view class='praise'>
+          <image src='{{iconUrl}}heartactive.png'></image>
+          <text class='fs28'>{{contents.praise}}</text>
         </view>
+      </view>
+      <view class='title fs36'>{{contents.title}}</view>
+      <view class='details fs28'>{{contents.details}}</view>
     </view>
-    <view class='lt {{navclass.content4class}}' id='content4' wx:if='{{utype=="manage"}}'>
-        <view class="containers" wx:for="{{content4}}" wx:for-item="contents" wx:key="content4">
-	<view class='image'>
-      <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
-    </view>
-    <view class='date fs32'>
-    <text class='lt'>发布者：{{contents.name}}</text>   
-    <text class='fs28 lt'>{{contents.date}}</text>
-    <view class='praise'>
-      <image src='{{iconUrl}}heartactive.png'></image>
-      <text class='fs28'>{{contents.praise}}</text>
-    </view>
-    </view>
-    <view class='title fs36'>{{contents.title}}</view>
-    <view class='details fs28'>{{contents.details}}</view>
-	</view>
     <view class="more fs32">加载更多 →_→</view>
+  </view>
+  <view class='lt {{navclass.content2class}}'>
+    <view class="containers" wx:for="{{content2}}" wx:for-item="contents" wx:key="content2">
+      <view class='image'>
+        <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
+      </view>
+      <view class='date fs32'>
+        <text class='lt'>发布者：{{contents.name}}</text>
+        <text class='fs28 lt'>{{contents.date}}</text>
+        <view class='praise'>
+          <image src='{{iconUrl}}heartactive.png'></image>
+          <text class='fs28'>{{contents.praise}}</text>
+        </view>
+      </view>
+      <view class='title fs36'>{{contents.title}}</view>
+      <view class='details fs28'>{{contents.details}}</view>
     </view>
+    <view class="more fs32">加载更多 →_→</view>
+  </view>
+
+  <view class='lt {{navclass.content3class}}' id='content3'>
+    <view wx:for='{{users}}' wx:for-item='user' class='user' uid='{{user.uid}}' catchtap='userinfo' wx:key="users">
+      <image class='userimage' src='{{iconUrl+user.image}}' mode='aspectFill'></image>
+      <view class='username fs36'>{{user.name}}</view>
+      <image class='usersex' src='{{iconUrl}}man.png' wx:if='{{user.sex==1}}'></image>
+      <image class='usersex' wx:if='{{user.sex==2}}' src='{{iconUrl}}woman.png'></image>
+      <view class='useraddress fs32'>{{user.address}}</view>
+    </view>
+  </view>
+  <view class='lt {{navclass.content4class}}' id='content4' wx:if='{{utype=="manage"}}'>
+    <view class="containers" wx:for="{{content4}}" wx:for-item="contents" wx:key="content4">
+      <view class='image'>
+        <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
+      </view>
+      <view class='date fs32'>
+        <text class='lt'>发布者：{{contents.name}}</text>
+        <text class='fs28 lt'>{{contents.date}}</text>
+        <view class='praise'>
+          <image src='{{iconUrl}}heartactive.png'></image>
+          <text class='fs28'>{{contents.praise}}</text>
+        </view>
+      </view>
+      <view class='title fs36'>{{contents.title}}</view>
+      <view class='details fs28'>{{contents.details}}</view>
+    </view>
+    <view class="more fs32">加载更多 →_→</view>
+  </view>
 </view>

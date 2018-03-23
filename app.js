@@ -1,39 +1,57 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId  sessionKey, unionId
+    var that = this;
+    /*wx.login({
+      success: function (res) {
+        that.query({
+          url: "user",
+          data: {
+            code: res.code,
+            userInfo:{}
+          },
+          success: function (data) {
+            that.globalData.userInfo = data.user;
+          }
+        })
+      }
+    })*/
+    that.Query({
+      url:"user",
+      data:{
+        name:"asd",
+        sex:12
+      },
+      success:function(data){
+        console.log(data)
       }
     })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
+    wx.getUserInfo({
+      lang:"zh_CN",
+      success: function (user) {
+        that.globalData.userInfo = {
+          name: user.userInfo.nickName,
+          sex: user.userInfo.gender,
+          image: user.userInfo.avatarUrl,
+          city: user.userInfo.province + "_" + user.userInfo.city,
+          introduce: "这个人很懒，什么也没留下。",
+          hreat:0
         }
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    iconUrl: "https://raw.githubusercontent.com/Jy9/icon/master/",
+    labels: ["旅游","写作","程序员","连载","游戏","购物","故事会"]
+  },
+  Query: function (obj) {
+    console.log("asd")
+    wx.request({
+      url: "http://192.168.1.102:3000/" + obj.url,
+      method: "POST",
+      data: obj.data,
+      success: obj.success
+    })
   }
 })

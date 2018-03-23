@@ -32,26 +32,38 @@
 </view>
 
 <view class='discusscompile fs32' catchtap='footerview'>
-<textarea wx:if='{{istextarea}}' focus='{{textareafocus}}' value='{{discussval}}' cursor-spacing='20' placeholder='在这里写下你的看法'  maxlength='-1' bindinput='bindinput'/>
-<text wx:else>在这里写下你的看法</text>
+  <textarea wx:if='{{istextarea}}' focus='{{textareafocus}}' value='{{discussval}}' cursor-spacing='20' placeholder='在这里写下你的看法' maxlength='-1' bindinput='bindinput' />
+  <text wx:else>在这里写下你的看法</text>
 </view>
 <view class='discusssublime fs36' id='discusssublime' catchtap='discussblur'>提交</view>
 
 <view wx:if='{{ispass}}'>
-<view class='discuss'>
-  <image class='distitle lt' mode='aspectFill' src='{{iconUrl}}photo.jpg'></image>
-  <view class='disname lt fs32'>贾越</view>
-  <view class='disdate lt fs28'>2018/3/15</view>
-  <view class='approve rt fs28'><image mode='aspectFill' src='{{iconUrl}}noheart.png'></image><text>122</text></view>
-  <view class='rubbish rt fs28'><image mode='aspectFill' src='{{iconUrl}}heart.png'></image><text>122</text></view>
-  <view class='discontent lt fs32'>我是评论内我我是评论内容我是评论内容是评论内容我是评论内容我是评论内容容</view>
-</view>
-<view class='discuss'>
-  <image class='distitle lt' mode='aspectFill' src='{{iconUrl}}photo.jpg'></image>
-  <view class='disname lt fs32'>贾越</view>
-  <view class='disdate lt fs28'>2018/3/15</view>
-  <view class='approve rt fs28'><image mode='aspectFill' src='{{iconUrl}}noheart.png'></image><text>122</text></view>
-  <view class='rubbish rt fs28'><image mode='aspectFill' src='{{iconUrl}}heart.png'></image><text>122</text></view>
-  <view class='discontent lt fs32'>我是评论内我我是评论内容我是评论内容是评论内容我是评论内容我是评论内容容</view>
-</view>
+  <view class='discuss'>
+    <image class='distitle lt' mode='aspectFill' src='{{iconUrl}}photo.jpg'></image>
+    <view class='disname lt fs32'>贾越</view>
+    <view class='disdate lt fs28'>2018/3/15</view>
+    <view class='approve rt fs28'>
+      <image mode='aspectFill' src='{{iconUrl}}noheart.png'></image>
+      <text>122</text>
+    </view>
+    <view class='rubbish rt fs28'>
+      <image mode='aspectFill' src='{{iconUrl}}heart.png'></image>
+      <text>122</text>
+    </view>
+    <view class='discontent lt fs32'>我是评论内我我是评论内容我是评论内容是评论内容我是评论内容我是评论内容容</view>
+  </view>
+  <view class='discuss'>
+    <image class='distitle lt' mode='aspectFill' src='{{iconUrl}}photo.jpg'></image>
+    <view class='disname lt fs32'>贾越</view>
+    <view class='disdate lt fs28'>2018/3/15</view>
+    <view class='approve rt fs28'>
+      <image mode='aspectFill' src='{{iconUrl}}noheart.png'></image>
+      <text>122</text>
+    </view>
+    <view class='rubbish rt fs28'>
+      <image mode='aspectFill' src='{{iconUrl}}heart.png'></image>
+      <text>122</text>
+    </view>
+    <view class='discontent lt fs32'>我是评论内我我是评论内容我是评论内容是评论内容我是评论内容我是评论内容容</view>
+  </view>
 </view>

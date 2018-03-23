@@ -1,34 +1,10 @@
 <!--setuse.wxml-->
 <view class='header'>
-    <view class='lt' catchtap='back'>取消</view>
-    <view class='lt' catchtap='ok'>保存</view>
+  <view class='lt' catchtap='back'>取消</view>
+  <view class='lt' catchtap='ok'>保存</view>
 </view>
 
-<view class='name'>
-    <text class='lt'>姓名：</text>
-    <input class='lt' placeholder='请输入您的名字' maxlength='6' bindinput='inputchange'></input>
-</view>
-<radio-group class="sex" bindchange="radioChange">
-  <label class="radio">
-    <radio value="1"/>男
-  </label>
-  <label class="radio">
-    <radio value="0"/>女
-  </label>
-</radio-group>
-<picker class='date' mode="date" bindchange="bindDateChange">
-    <view class="picker">
-      选择出生日期：{{date}}
-    </view>
-  </picker>
-    <picker class='city' mode="region" bindchange="bindRegionChange">
-    <view class="picker">
-      选择所在城市：{{city}}
-    </view>
-  </picker>
 <view class='introduce'>
-    <text>介绍：</text>
-    <textarea placeholder='请向别人介绍一下你自己！' placeholder-style='color:#eee' bindinput='textareachange'></textarea>
+  <text>个人介绍：</text>
+  <textarea auto-focus='true' placeholder='请向别人介绍一下你自己！' placeholder-style='color:#eee' bindinput='textareachange'></textarea>
 </view>
-<view catchtap='setbgimg' class='bgimage lt'><image mode='aspectFill' src='{{bgimg}}'></image><text>设置背景图片</text></view>
-<view catchtap='settitleimg' class='titleimage lt'><image mode='aspectFill' src='{{titleimg}}'></image><text>设置头像</text></view>

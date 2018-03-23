@@ -1,31 +1,33 @@
 /**subject.wxss**/
-page{
+
+page {
   padding-top: 140rpx;
 }
 
-.header{
+.header {
   width: 750rpx;
   height: 140rpx;
   background: #fff;
   border-bottom: 1rpx solid #eee;
   line-height: 40rpx;
   padding-top: 80rpx;
-  box-sizing:border-box;
+  box-sizing: border-box;
   padding-left: 20rpx;
   position: fixed;
   top: 0rpx;
   z-index: 1;
 }
 
-.containers{
-	width:750rpx;
-	height:260rpx;
-	border-bottom:1rpx solid #eee;
+.containers {
+  width: 750rpx;
+  height: 260rpx;
+  border-bottom: 1rpx solid #eee;
   position: relative;
   padding-left: 20rpx;
   box-sizing: border-box;
 }
-.containers>.image{
+
+.containers>.image {
   width: 180rpx;
   height: 180rpx;
   position: absolute;
@@ -34,43 +36,51 @@ page{
   overflow: hidden;
   border-radius: 20rpx;
 }
-.image>image{
-    height: 180rpx;
-    width: 180rpx;
+
+.image>image {
+  height: 180rpx;
+  width: 180rpx;
 }
-.date{
+
+.date {
   margin-top: 30rpx;
   overflow: hidden;
 }
-.date>text:nth-child(2){
+
+.date>text:nth-child(2) {
   margin-left: 30rpx;
-  color: #F27C5F;
+  color: #f27c5f;
 }
-.praise{
-    width: 120rpx;
+
+.praise {
+  width: 120rpx;
   position: absolute;
   right: 20rpx;
   top: 0rpx;
 }
-.praise>text{
+
+.praise>text {
   position: absolute;
   top: 0rpx;
   left: 60rpx;
   line-height: 36rpx;
   text-align: center;
 }
-.praise>image{
+
+.praise>image {
   position: absolute;
   top: 0rpx;
   left: 0rpx;
   width: 36rpx;
   height: 36rpx;
 }
-.title{
+
+.title {
   color: #666;
   margin-top: 20rpx;
 }
-.details{
+
+.details {
   width: 460rpx;
   margin-top: 10rpx;
   line-height: 40rpx;
@@ -81,10 +91,10 @@ page{
   -webkit-line-clamp: 3;
 }
 
-.more{
+.more {
   width: 750rpx;
   height: 110rpx;
-  border-bottom:12rpx solid #eee;
+  border-bottom: 12rpx solid #eee;
   text-align: center;
   line-height: 110rpx;
 }

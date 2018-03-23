@@ -2,7 +2,7 @@
 Page({
   data: {
     iconUrl: "https://raw.githubusercontent.com/Jy9/icon/master/",
-    content:[]
+    content: []
   },
   onLoad: function (options) {
     var thisData = this;
@@ -22,7 +22,7 @@ Page({
         details: "奥萨蒂哦我的阿斯觉得我啊为基地",
         image: "photo1.jpg",
         praise: 112
-        }]
+      }]
     })
   },
   headerback: function () {

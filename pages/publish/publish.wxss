@@ -1,24 +1,28 @@
 /*publish.wxss*/
-page{
+
+page {
   padding-top: 240rpx;
   padding-bottom: 100rpx;
 }
-.header,.footer{
+
+.header, .footer {
   position: fixed;
   left: 0rpx;
   box-sizing: border-box;
 }
-.header{
+
+.header {
   top: 0rpx;
   width: 100vw;
   height: 140rpx;
   line-height: 60rpx;
   padding-top: 80rpx;
   padding-left: 20rpx;
-  color: #F27C5F;
-  border-bottom: 1rpx solid #F27C5F;
+  color: #f27c5f;
+  border-bottom: 1rpx solid #f27c5f;
 }
-.footer{
+
+.footer {
   width: 750rpx;
   bottom: 0rpx;
   line-height: 80rpx;
@@ -26,114 +30,124 @@ page{
   border-top: 1rpx solid #eee;
 }
 
-.title{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0rpx;
-    left: 0rpx;
-    background: #eee;
-    z-index: 1;
-}
-.title>view{
-    width: 650rpx;
-    height: 300rpx;
-    background: #fff;
-    position: fixed;
-    top: 200rpx;
-    left: 50rpx;
-    border-radius: 12rpx;
-    overflow:hidden;
-}
-.title>view>input{
-    position: absolute;
-    left: 0rpx;
-    top: 70rpx;
-    height: 80rpx;
-    width: 650rpx;
-    text-align: center;
-}
-.title>view>view{
-    width: 650rpx;
-    line-height: 80rpx;
-    text-align: center;
-    position: absolute;
-    bottom: 0rpx;
-    left: 0rpx;
-    border-top: 1rpx solid #F27C5F;
-}
-.title>view>view>view{
-    width: 325rpx;
-}
-.title>view>view>view:last-child{
-    background: #F27C5F;
-    color: #fff;
+.title {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  background: #eee;
+  z-index: 1;
 }
 
-.label{
-    position: fixed;
-    top: 0rpx;
-    left: 0rpx;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-    background: #fff;
-}
-.label>view{
-    width: 80vw;
-    height: 80vh;
-    position: absolute;
-    top: 10vh;
-    left: 10vw;
-    background: #fff;
-    border-radius: 12rpx;
-    box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(0, 0, 0, 0.3);
-    overflow-y: scroll;
-}
-.label>view>view{
-    line-height: 80rpx;
-    text-align: center;
-    box-sizing: border-box;
-    border-top: 1rpx solid #eee;
-}
-.label>view>view:first-child{
-    border:none;
+.title>view {
+  width: 650rpx;
+  height: 300rpx;
+  background: #fff;
+  position: fixed;
+  top: 200rpx;
+  left: 50rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
 }
 
-.publish{
-    box-sizing: border-box;
-    width: 750rpx;
-    padding: 10rpx 20rpx;
-    margin-top: 20rpx;
+.title>view>input {
+  position: absolute;
+  left: 0rpx;
+  top: 70rpx;
+  height: 80rpx;
+  width: 650rpx;
+  text-align: center;
 }
 
-.set{
+.title>view>view {
+  width: 650rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  border-top: 1rpx solid #f27c5f;
+}
+
+.title>view>view>view {
+  width: 325rpx;
+}
+
+.title>view>view>view:last-child {
+  background: #f27c5f;
+  color: #fff;
+}
+
+.label {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background: #fff;
+}
+
+.label>view {
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  background: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+}
+
+.label>view>view {
+  line-height: 80rpx;
+  text-align: center;
+  box-sizing: border-box;
+  border-top: 1rpx solid #eee;
+}
+
+.label>view>view:first-child {
+  border: none;
+}
+
+.publish {
+  box-sizing: border-box;
+  width: 750rpx;
+  padding: 10rpx 20rpx;
+  margin-top: 20rpx;
+}
+
+.set {
   position: fixed;
   top: 140rpx;
   border-bottom: 1rpx solid #eee;
   height: 80rpx;
   line-height: 80rpx;
 }
-.set>view{
+
+.set>view {
   width: 375rpx;
   text-align: center;
   border-right: 1rpx solid #eee;
   box-sizing: border-box;
 }
 
-.preview{
-	width:100vw;
-	height:100vh;
-	background:#fff;
-	position:fixed;
-	top:0rpx;
-	left:0rpx;
+.preview {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
   padding-top: 120rpx;
   box-sizing: border-box;
   z-index: 2;
   overflow-y: scroll;
 }
-.preview>view:first-child{
+
+.preview>view:first-child {
   position: fixed;
   bottom: 0rpx;
   left: 0rpx;
@@ -141,18 +155,21 @@ page{
   width: 100vw;
   line-height: 80rpx;
   text-align: center;
-  border-top: 1rpx solid #F27C5F;
+  border-top: 1rpx solid #f27c5f;
   z-index: 2;
 }
-.preview>view:first-child>view{
+
+.preview>view:first-child>view {
   width: 375rpx;
   background: #fff;
 }
-.preview>view:first-child>view:last-child{
+
+.preview>view:first-child>view:last-child {
   color: #fff;
-  background: #F27C5F;
+  background: #f27c5f;
 }
-.body{
+
+.body {
   width: 750rpx;
   padding: 0rpx 20rpx;
   box-sizing: border-box;
@@ -161,54 +178,63 @@ page{
   left: 0rpx;
   padding-bottom: 80rpx;
 }
-.body>.bodytitle{
+
+.body>.bodytitle {
   margin-top: 20rpx;
   margin-bottom: 10rpx;
 }
-.body>.bodydate{
+
+.body>.bodydate {
   margin-bottom: 10rpx;
   color: #666;
 }
-.bodysubject{
+
+.bodysubject {
   border-radius: 12rpx;
-  border: 1rpx solid #F27C5F;
+  border: 1rpx solid #f27c5f;
   padding: 0rpx 10rpx;
   position: absolute;
   top: 90rpx;
   left: 200rpx;
 }
-.body>.bodypraise{
+
+.body>.bodypraise {
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: 90rpx;
   right: 20rpx;
 }
-.body>.bodypraise>image{
+
+.body>.bodypraise>image {
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: 0rpx;
   left: 0rpx;
 }
-.body>.bodypraise>text{
+
+.body>.bodypraise>text {
   position: absolute;
   top: -10rpx;
   left: -70rpx;
-  border-bottom: 1rpx solid #F27C5F;
+  border-bottom: 1rpx solid #f27c5f;
   padding: 0rpx 10rpx;
   border-radius: 12rpx;
-  color: #F27C5F;
+  color: #f27c5f;
 }
-.bodycontent{
+
+.bodycontent {
   padding-top: 40rpx;
   overflow: hidden;
 }
-.bodycontent>view>text{
+
+.bodycontent>view>text {
   display: block;
   margin-top: 40rpx;
 }
-.bodycontent>view>image{
+
+.bodycontent>view>image {
   width: 710rpx;
   margin-top: 40rpx;
 }

@@ -1,82 +1,92 @@
 /**info.wxss**/
-page{
+
+page {
   padding-top: 140rpx;
   padding-bottom: 100rpx;
 }
 
-.header{
+.header {
   width: 750rpx;
   height: 140rpx;
   background: #fff;
   border-bottom: 1rpx solid #eee;
   line-height: 40rpx;
   padding-top: 80rpx;
-  box-sizing:border-box;
+  box-sizing: border-box;
   padding-left: 20rpx;
   position: absolute;
   top: 0rpx;
   z-index: 1;
 }
 
-.body{
+.body {
   width: 750rpx;
   padding: 0rpx 20rpx;
   box-sizing: border-box;
   position: relative;
   padding-bottom: 80rpx;
 }
-.body>.bodytitle{
+
+.body>.bodytitle {
   margin-top: 20rpx;
   margin-bottom: 10rpx;
 }
-.body>.bodydate{
+
+.body>.bodydate {
   margin-bottom: 10rpx;
   color: #666;
 }
-.bodysubject{
+
+.bodysubject {
   border-radius: 12rpx;
-  border: 1rpx solid #F27C5F;
+  border: 1rpx solid #f27c5f;
   padding: 0rpx 10rpx;
   position: absolute;
   top: 70rpx;
   left: 200rpx;
 }
-.body>.bodypraise{
+
+.body>.bodypraise {
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: 90rpx;
   right: 20rpx;
 }
-.body>.bodypraise>image{
+
+.body>.bodypraise>image {
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: 0rpx;
   left: 0rpx;
 }
-.body>.bodypraise>text{
+
+.body>.bodypraise>text {
   position: absolute;
   top: -10rpx;
   left: -70rpx;
-  border-bottom: 1rpx solid #F27C5F;
+  border-bottom: 1rpx solid #f27c5f;
   padding: 0rpx 10rpx;
   border-radius: 12rpx;
-  color: #F27C5F;
+  color: #f27c5f;
 }
-.bodycontent{
+
+.bodycontent {
   padding-top: 40rpx;
 }
-.bodycontent>view>text{
+
+.bodycontent>view>text {
   display: block;
   margin-top: 40rpx;
 }
-.bodycontent>view>image{
+
+.bodycontent>view>image {
   width: 710rpx;
   margin-top: 40rpx;
 }
 
-.hr{
+.hr {
   height: 60rpx;
   background: #fff;
   border-top: 1rpx solid #eee;
@@ -88,78 +98,91 @@ page{
   margin-top: 1rpx;
 }
 
-.discusscompile,.discusscompile>textarea{
-    width: 750rpx;
-    height: 200rpx;
-    padding: 10rpx 20rpx;
-    box-sizing: border-box;
+.discusscompile, .discusscompile>textarea {
+  width: 750rpx;
+  height: 200rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
 }
-.discusscompile{
+
+.discusscompile {
   border-bottom: 1rpx solid #eee;
   position: relative;
 }
-.discusscompile>textarea{
-    position: absolute;
-    top:0rpx;
-    left: 0rpx;
+
+.discusscompile>textarea {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
 }
-.discusssublime{
+
+.discusssublime {
   line-height: 80rpx;
   text-align: center;
   border-bottom: 1rpx solid #eee;
 }
 
-.discuss{
+.discuss {
   border-bottom: 1rpx solid #eee;
   position: relative;
   overflow: hidden;
   padding-top: 40rpx;
 }
-.discuss>.distitle{
+
+.discuss>.distitle {
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
   margin-left: 20rpx;
 }
-.approve,.rubbish{
+
+.approve, .rubbish {
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: w0rpx;
 }
-.approve{
+
+.approve {
   right: 200rpx;
 }
-.rubbish{
+
+.rubbish {
   right: 20rpx;
 }
-.approve>image,.rubbish>image{
+
+.approve>image, .rubbish>image {
   width: 60rpx;
   height: 60rpx;
 }
-.approve>text,.rubbish>text{
+
+.approve>text, .rubbish>text {
   position: absolute;
   top: -10rpx;
   left: -70rpx;
-  border-right: 1rpx solid #F27C5F;
-  color: #F27C5F;
+  border-right: 1rpx solid #f27c5f;
+  color: #f27c5f;
   border-radius: 12rpx;
   padding: 0rpx 10rpx;
 }
-.approve>text{
+
+.approve>text {
   border-color: #e4393c;
   color: #e4393c;
 }
-.disname{
+
+.disname {
   margin-left: 40rpx;
   width: 600rpx;
 }
-.disdate{
+
+.disdate {
   width: 600rpx;
   margin-left: 40rpx;
-  color: #F27C5F;
+  color: #f27c5f;
 }
-.discontent{
+
+.discontent {
   width: 750rpx;
   padding: 0rpx 20rpx;
   margin-top: 30rpx;
@@ -167,7 +190,7 @@ page{
   box-sizing: border-box;
 }
 
-.footer{
+.footer {
   width: 750rpx;
   height: 100rpx;
   border-top: 1rpx solid #eee;
@@ -177,7 +200,8 @@ page{
   background: #fff;
   z-index: 1;
 }
-.footer>view{
+
+.footer>view {
   width: 560rpx;
   line-height: 60rpx;
   position: absolute;
@@ -185,11 +209,12 @@ page{
   left: 20rpx;
   padding-left: 20rpx;
   box-sizing: border-box;
-  border:1rpx solid #eee;
+  border: 1rpx solid #eee;
   border-radius: 12rpx;
   overflow: hidden;
 }
-.footer>image{
+
+.footer>image {
   position: absolute;
   top: 10rpx;
   right: 30rpx;

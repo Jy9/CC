@@ -3,6 +3,8 @@
 
 <view class='fs32 synopsis'>本软件免费为大家提供一个创作、阅读的平台，不要在本平台发布一些无关广告。有好的建议或者软件有错误的地方，请联系我</view>
 <view class='fs32 peoplenum'>平台注册人数：{{peoplenum}}</view>
-<view class='fs32 relation'><view class='fs28 num'>微信：15601215226（同手机）</view>
-<view class='fs28 num'>QQ ：174 5959459</view>
-<view class='fs28 num'>邮箱：15601215226@163.com</view></view>
+<view class='fs32 relation'>
+  <view class='fs28 num'>微信：15601215226（同手机）</view>
+  <view class='fs28 num'>QQ ：174 5959459</view>
+  <view class='fs28 num'>邮箱：15601215226@163.com</view>
+</view>

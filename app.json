@@ -1,21 +1,22 @@
 {
-    "pages":[
-        "pages/index/index",
-        "pages/logs/logs",
-        "pages/about/about",
-        "pages/personalcenter/personalcenter",
-        "pages/subject/subject",
-        "pages/info/info",
-        "pages/setuse/setuse",
-        "pages/publish/publish"
-    ],
-    "window": {
-        "navigationStyle": "custom",
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black",
-        "navigtionTextColor":"black"
-    },
-    "debug": true
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/personalcenter/personalcenter",
+    "pages/subject/subject",
+    "pages/info/info",
+    "pages/setuse/setuse",
+    "pages/publish/publish",
+    "pages/msg/msg"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigtionTextColor": "black"
+  },
+  "debug": true
 }

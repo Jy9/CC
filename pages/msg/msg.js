@@ -1,9 +1,8 @@
-//about.js
+//msg.js
 var app = getApp();
 Page({
   data: {
-    iconUrl: "",
-    peoplenum: 0
+    
   },
   onLoad: function () {
     var thisData = this;

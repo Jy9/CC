@@ -1,17 +1,20 @@
 /**index.wxss**/
-.container{
+
+.container {
   padding-top: 60rpx;
   box-sizing: border-box;
 }
-.containers{
-	width:750rpx;
-	height:260rpx;
-	border-bottom:1rpx solid #eee;
+
+.containers {
+  width: 750rpx;
+  height: 260rpx;
+  border-bottom: 1rpx solid #eee;
   position: relative;
   padding-left: 20rpx;
   box-sizing: border-box;
 }
-.containers>.image{
+
+.containers>.image {
   width: 180rpx;
   height: 180rpx;
   position: absolute;
@@ -20,43 +23,51 @@
   overflow: hidden;
   border-radius: 20rpx;
 }
-.image>image{
-    height: 180rpx;
-    width: 180rpx;
+
+.image>image {
+  height: 180rpx;
+  width: 180rpx;
 }
-.date{
+
+.date {
   margin-top: 30rpx;
   overflow: hidden;
 }
-.date>text:nth-child(2){
+
+.date>text:nth-child(2) {
   margin-left: 30rpx;
-  color: #F27C5F;
+  color: #f27c5f;
 }
-.praise{
-    width: 120rpx;
+
+.praise {
+  width: 120rpx;
   position: absolute;
   right: 20rpx;
   top: 0rpx;
 }
-.praise>text{
+
+.praise>text {
   position: absolute;
   top: 0rpx;
   left: 60rpx;
   line-height: 36rpx;
   text-align: center;
 }
-.praise>image{
+
+.praise>image {
   position: absolute;
   top: 0rpx;
   left: 0rpx;
   width: 36rpx;
   height: 36rpx;
 }
-.title{
+
+.title {
   color: #666;
   margin-top: 20rpx;
 }
-.details{
+
+.details {
   width: 460rpx;
   margin-top: 10rpx;
   line-height: 40rpx;
@@ -67,77 +78,84 @@
   -webkit-line-clamp: 3;
 }
 
-.subject{
+.subject {
   padding: 0rpx 20rpx;
   box-sizing: border-box;
   border-bottom: 3rpx dashed #eee;
   padding-bottom: 20rpx;
 }
-.subject>view:first-child{
+
+.subject>view:first-child {
   height: 80rpx;
   line-height: 80rpx;
 }
-.subject>view:last-child{
+
+.subject>view:last-child {
   overflow: hidden;
   font-size: 30rpx;
 }
-.subject>view:last-child>view{
+
+.subject>view:last-child>view {
   margin-right: 20rpx;
   border-radius: 10rpx;
-  border: 1rpx solid #F27C5F;
-  color: #F27C5F;
+  border: 1rpx solid #f27c5f;
+  color: #f27c5f;
   padding: 4rpx 20rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 }
 
-.more{
+.more {
   width: 750rpx;
   height: 110rpx;
-  border-bottom:12rpx solid #eee;
+  border-bottom: 12rpx solid #eee;
   text-align: center;
   line-height: 110rpx;
 }
 
-.cont{
+.cont {
   width: 750rpx;
   position: relative;
   padding-top: 80rpx;
 }
-.cont>image{
+
+.cont>image {
   width: 750rpx;
   height: 360rpx;
   position: absolute;
-  top:0px;
+  top: 0px;
   left: 0px;
 }
-.cont>view{
-    position: relative;
+
+.cont>view {
+  position: relative;
   line-height: 90rpx;
-   text-align: center;
-}
-.cont>view.text{
-    padding: 0rpx 85rpx;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-.cont>view>text{
-    color:#F27C5F;
-    display: block;
-    width: 180rpx;
-    border-bottom: 1rpx solid #F27C5F;
-    border-top: 1rpx solid #F27C5F;
+  text-align: center;
 }
 
-.footer{
-    line-height: 40rpx;
-    position: fixed;
-    bottom: 30rpx;
-    right: 20rpx;
-    background:#00B800;
-    text-align: center;
-    color:#fff;
-    padding: 10rpx 20rpx;
-    border-radius: 12rpx;
-    box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(0, 0, 0, 0.4);
+.cont>view.text {
+  padding: 0rpx 85rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cont>view>text {
+  color: #f27c5f;
+  display: block;
+  width: 180rpx;
+  border-bottom: 1rpx solid #f27c5f;
+  border-top: 1rpx solid #f27c5f;
+}
+
+.footer {
+  line-height: 40rpx;
+  position: fixed;
+  bottom: 30rpx;
+  right: 20rpx;
+  background: #00b800;
+  text-align: center;
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(0, 0, 0, 0.4);
 }

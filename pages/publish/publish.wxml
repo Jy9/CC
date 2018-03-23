@@ -2,19 +2,19 @@
 <view class='header' catchtap='previewtap'>预览 》</view>
 
 <view class='title' wx:if='{{isText}}'>
+  <view>
+    <input maxlength='12' placeholder='请输入文章名称' value='{{title}}' auto-focus='true' bindinput='titleset'></input>
     <view>
-        <input maxlength='12' placeholder='请输入文章名称' value='{{title}}' auto-focus='true' bindinput='titleset'></input>
-        <view>
-            <view catchtap='select' class='lt'>{{label}}</view>
-            <view catchtap='titleok' class='lt'>确定</view>
-        </view>
+      <view catchtap='select' class='lt'>{{label}}</view>
+      <view catchtap='titleok' class='lt'>确定</view>
     </view>
+  </view>
 </view>
 
 <view class='label' wx:if='{{isselect}}'>
-    <view catchtap='selectlabel'>
-        <view wx:for='{{labels}}' wx:for-item='label' wx:key='label' id='{{label}}'>{{label}}</view>
-    </view>
+  <view catchtap='selectlabel'>
+    <view wx:for='{{labels}}' wx:for-item='labelitem' wx:key='labels' id='{{labelitem}}'>{{labelitem}}</view>
+  </view>
 </view>
 
 <textarea wx:if='{{istextarea}}' class='publish fs36' focus='{{textfocus}}' placeholder='正文' bindinput='textareainput' value='{{thistextarea}}'></textarea>
@@ -25,25 +25,25 @@
 </view>
 
 <view class='preview' wx:if='{{preview}}'>
-	<view>
+  <view>
     <view catchtap='previewback' class='lt'>继续编辑</view>
     <view class='lt'>发表</view>
   </view>
-	<view class='body'>
+  <view class='body'>
     <view class='bodytitle fs46'>{{title}}</view>
-  <view class='bodydate fs28'>0000-00-00</view>
-  <view class='bodysubject fs28'>{{label}}</view>
-  <view class='bodypeople fs32'>作者：{{name}}</view>
-  <view class='bodypraise'>
-    <image src='{{iconUrl}}heartactive.png' mode='aspectFill'></image>
-    <text class='fs28'>0</text>
-  </view>
-  <view class='bodycontent fs32'>
-    <view wx:for='{{article}}' wx:for-item='label' wx:key='label'>
-      <text wx:if='{{label.type=="text"}}' space='emsp'>{{label.text}}</text>
-      <image mode='widthFix' wx:if='{{label.type=="image"}}' src='{{label.src}}'></image>
+    <view class='bodydate fs28'>0000-00-00</view>
+    <view class='bodysubject fs28'>{{label}}</view>
+    <view class='bodypeople fs32'>作者：{{userInfo.name}}</view>
+    <view class='bodypraise'>
+      <image src='{{iconUrl}}heartactive.png' mode='aspectFill'></image>
+      <text class='fs28'>0</text>
     </view>
-  </view>
+    <view class='bodycontent fs32'>
+      <view wx:for='{{article}}' wx:for-item='label' wx:key='label'>
+        <text wx:if='{{label.type=="text"}}' space='emsp'>{{label.text}}</text>
+        <image mode='widthFix' wx:if='{{label.type=="image"}}' src='{{label.src}}'></image>
+      </view>
+    </view>
   </view>
 </view>
 

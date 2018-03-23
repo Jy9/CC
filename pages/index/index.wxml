@@ -3,35 +3,33 @@
   <view class='subject'>
     <view class='fs32'>热门专题：</view>
     <view class='fs28' bindtap='subject'>
-      <view class='lt' id='{{sub.id}}' wx:key='subs' wx:for='{{subs}}' wx:for-item='sub'>{{sub.name}}</view>
+      <view class='lt' id='{{label}}' wx:key='label' wx:for='{{labels}}' wx:for-item='label'>{{label}}</view>
     </view>
   </view>
-	<view class="containers" id='{{contents.id}}' catchtap='content' wx:for="{{content}}" wx:for-item="contents" wx:key="index">
-	<view class='image'>
+  <view class="containers" id='{{contents.id}}' catchtap='content' wx:for="{{content}}" wx:for-item="contents" wx:key="index">
+    <view class='image'>
       <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
     </view>
     <view class='date fs32'>
-    <text class='lt'>发布者：{{contents.name}}</text>   
-    <text class='fs28 lt'>{{contents.date}}</text>
-    <view class='praise'>
-      <image src='{{iconUrl}}heartactive.png'></image>
-      <text class='fs28'>{{contents.praise}}</text>
-    </view>
+      <text class='lt'>发布者：{{contents.name}}</text>
+      <text class='fs28 lt'>{{contents.date}}</text>
+      <view class='praise'>
+        <image src='{{iconUrl}}heartactive.png'></image>
+        <text class='fs28'>{{contents.praise}}</text>
+      </view>
     </view>
     <view class='title fs36'>{{contents.title}}</view>
     <view class='details fs28'>{{contents.details}}</view>
-    
-	</view>
+
+  </view>
   <view class="more fs32">加载更多 →_→</view>
   <view class="cont">
     <image src='{{iconUrl}}first_background.jpg'></image>
     <view class='fs28 text'>
-        <text class='lt' catchtap='peoplelist'>打赏简文</text>
-        <text class='lt' catchtap='personalcenter'>个人中心</text>
-        <text class='lt' catchtap='about'>关于软件</text>
+      <text class='lt' catchtap='peoplelist'>打赏CC</text>
+      <text class='lt' catchtap='personalcenter'>个人中心</text>
+      <text class='lt' catchtap='about'>关于软件</text>
     </view>
-    <view class='fs28'>简文</view>
+    <view class='fs28'>CC写书</view>
   </view>
 </view>
-
-<view class='footer fs28'>成员人数：{{peoplenum}}人</view>
