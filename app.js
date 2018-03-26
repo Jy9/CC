@@ -5,11 +5,13 @@ App({
     wx.getUserInfo({
       lang:"zh_CN",
       success: function (user) {
-        let userInfo = {
+        that.globalData.userInfo = {
           name: user.userInfo.nickName,
           sex: user.userInfo.gender,
           image: user.userInfo.avatarUrl,
           city: user.userInfo.province + "_" + user.userInfo.city,
+          introduce: "这个人很懒，什么也没留下。",
+          hreat: 0
         }
         wx.login({
           success: function (res) {
@@ -17,11 +19,13 @@ App({
               url: "user",
               data: {
                 code: res.code,
-                userInfo: userInfo
+                userInfo: that.globalData.userInfo
               },
               success: function (data) {
                 console.log(data)
-                that.globalData.userInfo = data.user;
+                if (data.statusCode == 200){
+                  that.globalData.userInfo = data.user;
+                }
               }
             })
           }
@@ -37,7 +41,7 @@ App({
   query: function (obj) {
     console.log(obj.data)
     wx.request({
-      url: "http://41092527.nat123.cc/" + obj.url,
+      url: "http://192.168.1.102/" + obj.url,
       method: "POST",
       data: obj.data,
       success: obj.success
