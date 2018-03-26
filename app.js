@@ -24,7 +24,7 @@ App({
               success: function (data) {
                 console.log(data)
                 if (data.statusCode == 200){
-                  that.globalData.userInfo = data.user;
+                  that.globalData.userInfo = data.data.user;
                 }
               }
             })
@@ -41,7 +41,7 @@ App({
   query: function (obj) {
     console.log(obj.data)
     wx.request({
-      url: "http://192.168.1.102/" + obj.url,
+      url: "http://41092527.nat123.cc/" + obj.url,
       method: "POST",
       data: obj.data,
       success: obj.success
