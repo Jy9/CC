@@ -113,6 +113,15 @@ Page({
       count: 1,
       sizeType: 'original',
       success: function (res) {
+          console.log("p")
+          /*wx.uploadFile({
+            url: 'http://41092527.nat123.cc/addimg',
+            filePath: res.tempFilePaths[0],
+            name: 'file',
+            success:function(data){
+                console.log(data)
+            }
+        })*/
         article.push({
           type: "image",
           src: res.tempFilePaths[0]
@@ -155,5 +164,36 @@ Page({
         textfocus: true
       })
     }, 400)
+  },
+  ok:function(){
+      var that = this;
+      wx.showLoading({
+          title: '发表中...'
+      })
+      var article = {
+          user: {
+              name: that.data.userInfo.name,
+              uid: that.data.userInfo.uid
+          },
+          title: that.data.title,
+          article: that.data.article,
+          date: new Date(),
+          label: that.data.label,
+          heart: 0,
+          isshow: 0
+      }
+      console.log(article)
+      app.query({
+          url:"postarticle",
+          data:article,
+          success:function(data){
+            wx.showToast({
+                title: '发表成功'
+            });
+            setTimeout(function(){
+                wx.navigateBack();
+            },600)
+          }
+      })
   }
 })
