@@ -5,7 +5,7 @@ App({
     wx.getUserInfo({
       lang:"zh_CN",
       success: function (user) {
-        that.globalData.userInfo = {
+        var userInfo = {
           name: user.userInfo.nickName,
           sex: user.userInfo.gender,
           image: user.userInfo.avatarUrl,
@@ -19,19 +19,19 @@ App({
               url: "user",
               data: {
                 code: res.code,
-                userInfo: that.globalData.userInfo
+                userInfo: userInfo
               },
               success: function (data) {
                 console.log(data)
                 if (data.statusCode == 200){
-                  that.globalData.userInfo = data.data.user;
+                  that.globalData.userInfo = data.data;
                 }
               }
             })
           }
         })
       }
-    })
+    });
   },
   globalData: {
     userInfo: null,
@@ -39,7 +39,6 @@ App({
     labels: ["旅游","写作","程序员","连载","游戏","购物","故事会"]
   },
   query: function (obj) {
-    console.log(obj.data)
     wx.request({
       url: "http://41092527.nat123.cc/" + obj.url,
       method: "POST",
