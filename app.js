@@ -15,6 +15,9 @@ App({
         }
         wx.login({
           success: function (res) {
+            wx.showLoading({
+              title: '正在加载...',
+            })
             that.query({
               url: "user",
               data: {
@@ -24,6 +27,7 @@ App({
               success: function (data) {
                 console.log(data)
                 if (data.statusCode == 200){
+                  wx.hideLoading();
                   that.globalData.userInfo = data.data;
                 }
               }

@@ -5,13 +5,13 @@
   <view class='bodytitle fs46'>{{article.title}}</view>
   <view class='bodydate fs28'>{{article.date}}</view>
   <view class='bodysubject fs28'>{{article.label}}</view>
-  <view class='bodypeople fs32'>作者：{{article.name}}</view>
+  <view class='bodypeople fs32'>作者：{{article.user.name}}</view>
   <view class='bodypraise'>
     <image src='{{iconUrl}}heartactive.png' mode='aspectFill'></image>
-    <text class='fs28'>{{article.like}}</text>
+    <text class='fs28'>{{article.heart}}</text>
   </view>
   <view class='bodycontent fs32'>
-    <view wx:for='{{article.articles}}' wx:for-item='label' wx:key='label'>
+    <view wx:for='{{article.article}}' wx:for-item='label' wx:key='label'>
       <text wx:if='{{label.type=="text"}}' space='emsp'>{{label.text}}</text>
       <image mode='widthFix' wx:if='{{label.type=="image"}}' src='{{label.src}}'></image>
     </view>
@@ -20,7 +20,7 @@
 
 <view class='hr fs28'>评论数：12</view>
 
-<view class='footer' wx:if='{{ifpass}}'>
+<view class='footer' wx:if='{{ispass}}'>
   <view class='lt' catchtap='footerview' wx:if='{{discussval!=""}}'>{{discussval}}</view>
   <view class='lt' catchtap='footerview' wx:else>快来评价这篇文章吧！</view>
   <image class='rt' src='{{iconUrl}}heart.png'></image>

@@ -1,35 +1,30 @@
 //info.js
+var app = getApp();
 Page({
-  ifpass: true,
   data: {
     iconUrl: "https://raw.githubusercontent.com/Jy9/icon/master/",
     textareafocus: false,
     istextarea: false,
     discussval: "",
-    article: {
-      title: "我是标题 标题 标标题",
-      date: "2018-3-20",
-      label: "拼车",
-      name: "贾越",
-      like: 12,
-      articles: [
-        {
-          type: "image",
-          src: "https://raw.githubusercontent.com/Jy9/icon/master/photo1.jpg"
-        },
-        {
-          type: "text",
-          text: "啊飒飒大苏打阿斯顿大时代阿萨大大啊实打实的阿斯顿阿斯顿阿斯顿"
-        }
-      ]
-    }
+    ispass: false,
+    article: {}
   },
   onLoad: function (options) {
     var thisData = this;
-    console.log(options.id);
+    console.log();
 
     thisData.setData({
       ifpass: false
+    })
+    app.query({
+      url: "articleinfo",
+      data: { id: options.id},
+      success:function(data){
+        thisData.setData({
+          article: data.data,
+          ispass: data.data.isshow
+        })
+      }
     })
   },
   headerback: function () {

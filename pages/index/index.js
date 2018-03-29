@@ -12,25 +12,16 @@ Page({
       iconUrl: app.globalData.iconUrl,
       labels: app.globalData.labels
     })
-    thisData.setData({
-      content: [{
-        id: 1,
-        date: "2108/3/13",
-        title: "我是开发者",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-        image: "photo.jpg",
-        praise: 112
-      }, {
-        id: 2,
-        date: "2108/3/13",
-        title: "我是开发者",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-        image: "photo1.jpg",
-        praise: 112
-      }],
-    });
+
+    //读取文章列表
+    app.query({
+      url:"getarticlelist",
+      success:function(data){
+        thisData.setData({
+          content: data.data
+        });
+      }
+    })
   },
   peoplelist: function () {
     wx.showToast({
