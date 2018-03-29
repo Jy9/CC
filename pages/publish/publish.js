@@ -113,7 +113,7 @@ Page({
       count: 1,
       sizeType: 'original',
       success: function (res) {
-          console.log("p")
+          console.log(res)
           /*wx.uploadFile({
             url: 'http://41092527.nat123.cc/addimg',
             filePath: res.tempFilePaths[0],
