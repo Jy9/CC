@@ -1,8 +1,13 @@
 //query
-var $query = function(obj){
-
+var query = function (obj) {
+  wx.request({
+    url: "http://41092527.nat123.cc/" + obj.url,
+    method: "POST",
+    data: obj.data,
+    success: obj.success
+  })
 }
-//获取文章列表
-var $getArticleList = function (obj){
 
-}
+module.exports = {
+  query:query
+};

@@ -1,5 +1,6 @@
 //setuse.js
 var app = getApp();
+const $ = require('../../utils/util.js');
 Page({
   data: {
     iconUrl: "https://raw.githubusercontent.com/Jy9/icon/master/",
@@ -31,7 +32,7 @@ Page({
         title: '正在设置...'
       })
       var app = getApp();
-      app.query({
+      $.query({
         url:"setintroduce",
         data:{
           introduce: introduce,

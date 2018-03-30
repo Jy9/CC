@@ -1,4 +1,6 @@
 //subject.js
+var app = getApp();
+const $ = require('../../utils/util.js');
 Page({
   data: {
     iconUrl: "https://raw.githubusercontent.com/Jy9/icon/master/",

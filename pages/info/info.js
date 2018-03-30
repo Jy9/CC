@@ -1,5 +1,6 @@
 //info.js
 var app = getApp();
+const $ = require('../../utils/util.js');
 Page({
   data: {
     iconUrl: "https://raw.githubusercontent.com/Jy9/icon/master/",
@@ -13,10 +14,7 @@ Page({
     var thisData = this;
     console.log();
 
-    thisData.setData({
-      ifpass: false
-    })
-    app.query({
+    $.query({
       url: "articleinfo",
       data: { id: options.id},
       success:function(data){

@@ -1,5 +1,6 @@
 //personalcenter.js
 var app = getApp();
+const $ = require('../../utils/util.js');
 Page({
   data: {
     iconUrl: "",
@@ -29,12 +30,30 @@ Page({
     content3: [],
     content4: []
   },
-  onLoad: function () {
+  onLoad: function (options) {
     var thisData = this;
 
     thisData.setData({
       userInfo: app.globalData.userInfo,
       iconUrl: app.globalData.iconUrl
+    });
+
+    //获取user信息
+    if (!options.id){
+      options.id = app.globalData.userInfo.uid;
+    }
+    $.query({
+      url:"getuser",
+      data:{
+        uid: app.globalData.userInfo.uid,
+        useid: options.id
+      },
+      success:function(data){
+        console.log(data)
+        thisData.setData({
+          userInfo:data.userinfo
+        })
+      }
     })
 
     thisData.setData({
@@ -59,55 +78,6 @@ Page({
 
     thisData.setData({
       content1: [{
-        date: "2108/3/13",
-        title: "我是开发者1",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-        image: "photo.jpg",
-        praise: 112
-      }, {
-        date: "2108/3/13",
-        title: "我是开发者1",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-        image: "photo.jpg",
-        praise: 112
-        }, {
-          date: "2108/3/13",
-          title: "我是开发者1",
-          name: "贾越",
-          details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-          image: "photo.jpg",
-          praise: 112
-      }, {
-        date: "2108/3/13",
-        title: "我是开发者1",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-        image: "photo.jpg",
-        praise: 112
-        }, {
-          date: "2108/3/13",
-          title: "我是开发者1",
-          name: "贾越",
-          details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-          image: "photo.jpg",
-          praise: 112
-      }, {
-        date: "2108/3/13",
-        title: "我是开发者1",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-        image: "photo.jpg",
-        praise: 112
-        }, {
-          date: "2108/3/13",
-          title: "我是开发者1",
-          name: "贾越",
-          details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-          image: "photo.jpg",
-          praise: 112
-      }, {
         date: "2108/3/13",
         title: "我是开发者1",
         name: "贾越",

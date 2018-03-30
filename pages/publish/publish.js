@@ -1,5 +1,6 @@
 //publish.js
 var app = getApp();
+const $ = require('../../utils/util.js');
 Page({
   data: {
     userInfo:{},
@@ -113,15 +114,16 @@ Page({
       count: 1,
       sizeType: 'original',
       success: function (res) {
-          console.log(res)
-          /*wx.uploadFile({
-            url: 'http://41092527.nat123.cc/addimg',
+        console.log(res)
+          var reader = new FileReader()
+          wx.uploadFile({
+            url: 'http://41092527.nat123.cc/image',
             filePath: res.tempFilePaths[0],
             name: 'file',
             success:function(data){
                 console.log(data)
             }
-        })*/
+        })
         article.push({
           type: "image",
           src: res.tempFilePaths[0]
@@ -139,7 +141,6 @@ Page({
     })
   },
   textareainput: function (e) {
-    console.log(e);
     var thisObj = this;
     thisObj.setData({
       thistextarea: e.detail.value
@@ -183,7 +184,7 @@ Page({
           isshow: 0
       }
       console.log(article)
-      app.query({
+      $.query({
           url:"postarticle",
           data:article,
           success:function(data){
