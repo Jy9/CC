@@ -5,6 +5,7 @@ Page({
   data: {
     iconUrl: "",
     utype: "member",
+    isUse:true,
     headerOP: 0,
     userInfo:{},
     unfold: {
@@ -25,10 +26,10 @@ Page({
     cont1H: "0px",
     cont3H: "0px",
     cont4H: "0px",
-    content1: [],
-    content2: [],
-    content3: [],
-    content4: []
+    articledate: [],
+    articleheart: [],
+    users: [],
+    articlenoshow: []
   },
   onLoad: function (options) {
     var thisData = this;
@@ -48,101 +49,52 @@ Page({
         uid: app.globalData.userInfo.uid,
         useid: options.id
       },
-      success:function(data){
+      success: function (data) {
         console.log(data)
-        thisData.setData({
-          userInfo:data.userinfo
-        })
-      }
-    })
-
-    thisData.setData({
-      users: [
-        {
-          uid: 1,
-          name: "贾越",
-          sex: 1,
-          birthday: "1994/12/17",
-          image: "photo.jpg",
-          address: "海淀区 朱芳路"
-        }, {
-          uid: 2,
-          name: "贾越",
-          sex: 2,
-          birthday: "1994/12/17",
-          image: "photo1.jpg",
-          address: "海淀区 朱芳路"
+        var setObj = {
+            userInfo: data.data.userinfo,
+            articledate: data.data.articledate,
+            articleheart: data.data.articleheart,
+            users: data.data.userattent,
+            articlenoshow: data.data.articlenoshow
         }
-      ]
-    })
-
-    thisData.setData({
-      content1: [{
-        date: "2108/3/13",
-        title: "我是开发者1",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊asd阿d阿三大王的啊是的哇打算的阿三大王的asd撒旦为基地",
-        image: "photo.jpg",
-        praise: 112
-      }],
-      content2: [{
-        date: "2108/3/13",
-        title: "我是开发者2",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-        image: "photo1.jpg",
-        praise: 112
-      }],
-      content3: [{
-        date: "2108/3/13",
-        title: "我是开发者3",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-        image: "photo1.jpg",
-        praise: 112
-      }, {
-        date: "2108/3/13",
-        title: "我是开发者3",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-        image: "photo1.jpg",
-        praise: 112
-      }],
-      content4: [{
-        date: "2108/3/13",
-        title: "我是开发者3",
-        name: "贾越",
-        details: "奥萨蒂哦我的阿斯觉得我啊为基地",
-        image: "photo1.jpg",
-        praise: 112
-      }]
-    });
-    setTimeout(function () {
-      var query1 = wx.createSelectorQuery();
-      query1.select("#content1").boundingClientRect();
-      query1.exec(function (res) {
-        thisData.setData({
-          cont1H: res[0].height + "px",
-          contH: res[0].height + "px"
-        })
-      })
-      var query3 = wx.createSelectorQuery();
-      query3.select("#content3").boundingClientRect();
-      query3.exec(function (res) {
-        thisData.setData({
-          cont3H: res[0].height + "px"
-        })
-      })
-      if (thisData.data.utype == "manage") {
-        var query4 = wx.createSelectorQuery();
-        query4.select("#content4").boundingClientRect();
-        query4.exec(function (res) {
-          thisData.setData({
-            cont4H: res[0].height + "px"
-          })
-        })
+        if (options.id != app.globalData.userInfo.uid ){
+            setObj.isUse = false;
+            setObj.utype = "use";
+        }else{
+            if (data.data.userinfo.utype == 1) {
+                setObj.utype = "manage";
+            }
+        }
+        thisData.setData(setObj)
+        setTimeout(function () {
+            var query1 = wx.createSelectorQuery();
+            query1.select("#content1").boundingClientRect();
+            query1.exec(function (res) {
+                thisData.setData({
+                    cont1H: res[0].height + "px",
+                    contH: res[0].height + "px"
+                })
+            })
+            var query3 = wx.createSelectorQuery();
+            query3.select("#content3").boundingClientRect();
+            query3.exec(function (res) {
+                thisData.setData({
+                    cont3H: res[0].height + "px"
+                })
+            })
+            if (thisData.data.utype == "manage") {
+                var query4 = wx.createSelectorQuery();
+                query4.select("#content4").boundingClientRect();
+                query4.exec(function (res) {
+                    thisData.setData({
+                        cont4H: res[0].height + "px"
+                    })
+                })
+            }
+        }, 400)
       }
-    }, 400)
+    })
   },
   header_back: function () {
     wx.navigateBack({})
@@ -178,10 +130,41 @@ Page({
     })
   },
   heart:function(){
-    wx.showToast({
-      title: '关注成功',
-      icon:"none"
-    })
+      var that = this;
+      if (app.globalData.userInfo.uid != that.data.userInfo.uid){
+        var title = "关注成功";
+        if (that.data.userInfo.isattent){
+            title = "已取消关注"
+        }
+        $.query({
+            url:'loveuser',
+            data:{
+                uid: app.globalData.userInfo.uid,
+                useid:that.data.userInfo.uid,
+                love: !that.data.userInfo.isattent
+            },
+            success:function(data){
+                var userInfo = that.data.userInfo;
+                if (that.data.userInfo.isattent){
+                    userInfo.isattent = false
+                }else{
+                    userInfo.isattent = true
+                }
+                that.setData({
+                    userInfo:userInfo
+                })
+                wx.showToast({
+                    title: title,
+                    icon: "none"
+                })
+            }
+        })
+      }else{
+          wx.showToast({
+              title: '您当前的关注人数为'+that.data.userInfo.heart,
+              icon:"none"
+          })
+      }
   },
   nav1: function () {
     var thisObj = this;

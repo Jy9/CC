@@ -13,8 +13,9 @@
     <image wx:if='{{userInfo.sex == 2}}' src='{{iconUrl}}woman.png' class='lt'></image>
   </view>
   <view class='headerpraise' catchtap='heart'>
-    <image src='{{iconUrl}}heart.png'></image>
-    <text class='fs28'>{{userInfo.hreat}}</text>
+    <image wx:if='{{userInfo.isattent}}' src='{{iconUrl}}heartactive.png'></image>
+    <image wx:else src='{{iconUrl}}heart.png'></image>
+    <text class='fs28'>{{userInfo.heart}}</text>
   </view>
   <view class='wxnum fs32'>城市：{{userInfo.city}}</view>
 
@@ -26,13 +27,13 @@
   <view catchtap='openheader'>{{unfold.cont}}</view>
   <view catchtap='nav1' class='lt {{navclass.nav1class}}'>最新发布</view>
   <view catchtap='nav2' class='lt {{navclass.nav2class}}'>热门</view>
-  <view catchtap='nav3' class='lt {{navclass.nav3class}}'>我的关注</view>
+  <view catchtap='nav3' class='lt {{navclass.nav3class}}' wx:if='{{isUse}}'>我的关注</view>
   <view catchtap='nav4' class='lt {{navclass.nav4class}}' wx:if='{{utype=="manage"}}'>待审核</view>
 </view>
 
 <view class='content' style='height:{{contH}}'>
   <view class='lt {{navclass.content1class}}' id="content1">
-    <view class="containers" wx:for="{{content1}}" wx:for-item="contents" wx:key="content1">
+    <view class="containers" wx:for="{{articledate}}" wx:for-item="contents" wx:key="articledate" id='{{contents.id}}'>
       <view class='image'>
         <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
       </view>
@@ -47,10 +48,10 @@
       <view class='title fs36'>{{contents.title}}</view>
       <view class='details fs28'>{{contents.details}}</view>
     </view>
-    <view class="more fs32">加载更多 →_→</view>
+    <view wx:if='{{false}}' class="more fs32">加载更多 →_→</view>
   </view>
   <view class='lt {{navclass.content2class}}'>
-    <view class="containers" wx:for="{{content2}}" wx:for-item="contents" wx:key="content2">
+    <view class="containers" wx:for="{{articleheart}}" wx:for-item="contents" wx:key="articleheart" id='{{contents.id}}'>
       <view class='image'>
         <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
       </view>
@@ -65,20 +66,20 @@
       <view class='title fs36'>{{contents.title}}</view>
       <view class='details fs28'>{{contents.details}}</view>
     </view>
-    <view class="more fs32">加载更多 →_→</view>
+    <view wx:if='{{false}}' class="more fs32">加载更多 →_→</view>
   </view>
 
-  <view class='lt {{navclass.content3class}}' id='content3'>
+  <view class='lt {{navclass.content3class}}' id='content3' wx:if='{{isUse}}'>
     <view wx:for='{{users}}' wx:for-item='user' class='user' uid='{{user.uid}}' catchtap='userinfo' wx:key="users">
-      <image class='userimage' src='{{iconUrl+user.image}}' mode='aspectFill'></image>
+      <image class='userimage' src='{{user.image}}' mode='aspectFill'></image>
       <view class='username fs36'>{{user.name}}</view>
       <image class='usersex' src='{{iconUrl}}man.png' wx:if='{{user.sex==1}}'></image>
       <image class='usersex' wx:if='{{user.sex==2}}' src='{{iconUrl}}woman.png'></image>
-      <view class='useraddress fs32'>{{user.address}}</view>
+      <view class='useraddress fs32'>{{user.city}}</view>
     </view>
   </view>
   <view class='lt {{navclass.content4class}}' id='content4' wx:if='{{utype=="manage"}}'>
-    <view class="containers" wx:for="{{content4}}" wx:for-item="contents" wx:key="content4">
+    <view class="containers" wx:for="{{articlenoshow}}" wx:for-item="contents" wx:key="articlenoshow" id='{{contents.id}}'>
       <view class='image'>
         <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
       </view>
@@ -93,6 +94,6 @@
       <view class='title fs36'>{{contents.title}}</view>
       <view class='details fs28'>{{contents.details}}</view>
     </view>
-    <view class="more fs32">加载更多 →_→</view>
+    <view wx:if='{{false}}' class="more fs32">加载更多 →_→</view>
   </view>
 </view>

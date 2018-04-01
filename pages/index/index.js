@@ -27,7 +27,7 @@ Page({
           image: user.userInfo.avatarUrl,
           city: user.userInfo.province + "_" + user.userInfo.city,
           introduce: "这个人很懒，什么也没留下。",
-          hreat: 0
+          heart: 0
         }
         wx.login({
           success: function (res) {

@@ -115,13 +115,10 @@ Page({
       sizeType: 'original',
       success: function (res) {
         console.log(res)
-          var reader = new FileReader()
-          wx.uploadFile({
-            url: 'http://41092527.nat123.cc/image',
-            filePath: res.tempFilePaths[0],
-            name: 'file',
+        $.uploadImg({
+            path: res.tempFilePaths[0],
             success:function(data){
-                console.log(data)
+                console.log(data);
             }
         })
         article.push({

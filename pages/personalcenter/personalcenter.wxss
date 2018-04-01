@@ -143,6 +143,10 @@ page{
   width: 187.5rpx;
 }
 
+.nav.use>view{
+    width: 375rpx;
+}
+
 .nav>view:first-child {
   border-top: 1rpx solid #f27c5f;
   background: #f27c5f;
