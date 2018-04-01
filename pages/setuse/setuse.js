@@ -44,7 +44,7 @@ Page({
             title: '设置成功'
           })
           setTimeout(function () {
-            wx.navigateBack()
+              wx.navigateBack({})
           }, 600)
         }
       })

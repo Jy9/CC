@@ -51,7 +51,6 @@ Page({
     $.query({
       url:"getarticlelist",
       success:function(data){
-        console.log(data)
         thisData.setData({
           content: data.data
         });

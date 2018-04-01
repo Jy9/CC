@@ -44,7 +44,7 @@ page{
 }
 
 .header{
-  height: 320rpx;
+  height: 380rpx;
   background: #fff;
   position: relative;
 }

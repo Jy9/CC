@@ -9,7 +9,7 @@ Page({
     headerOP: 0,
     userInfo:{},
     unfold: {
-      height: "-80rpx",
+      height: "-140rpx",
       cont: "展开(っ´Ι`)っ"
     },
     navclass: {
@@ -40,6 +40,9 @@ Page({
     });
 
     //获取user信息
+    wx.showLoading({
+        title: '正在加载...',
+    })
     if (!options.id){
       options.id = app.globalData.userInfo.uid;
     }
@@ -66,7 +69,8 @@ Page({
                 setObj.utype = "manage";
             }
         }
-        thisData.setData(setObj)
+        thisData.setData(setObj);
+        wx.hideLoading();
         setTimeout(function () {
             var query1 = wx.createSelectorQuery();
             query1.select("#content1").boundingClientRect();
@@ -97,15 +101,15 @@ Page({
     })
   },
   header_back: function () {
-    wx.navigateBack({})
+      wx.navigateBack({})
   },
   openheader: function () {
     var thisObj = this;
-    if (thisObj.data.unfold.height == "-80rpx") {
+    if (thisObj.data.unfold.height == "-140rpx") {
       thisObj.setData({
         headerOP: 1,
         unfold: {
-          height: "160rpx",
+          height: "80rpx",
           cont: "收起(ಥ _ ಥ)"
         }
       })
@@ -113,7 +117,7 @@ Page({
       thisObj.setData({
         headerOP: 0,
         unfold: {
-          height: "-80rpx",
+          height: "-140rpx",
           cont: "展开(っ´Ι`)っ"
         }
       })
@@ -165,6 +169,14 @@ Page({
               icon:"none"
           })
       }
+  },
+  userinfo:function(e){
+      console.log(e.currentTarget.id)
+  },
+  articleInfo:function(e){
+      wx.navigateTo({
+          url: '../info/info?id=' + e.currentTarget.id
+      })
   },
   nav1: function () {
     var thisObj = this;

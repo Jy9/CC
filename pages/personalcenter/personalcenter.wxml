@@ -33,7 +33,7 @@
 
 <view class='content' style='height:{{contH}}'>
   <view class='lt {{navclass.content1class}}' id="content1">
-    <view class="containers" wx:for="{{articledate}}" wx:for-item="contents" wx:key="articledate" id='{{contents.id}}'>
+    <view class="containers" catchtap='articleInfo' wx:for="{{articledate}}" wx:for-item="contents" wx:key="articledate" id='{{contents.id}}'>
       <view class='image'>
         <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
       </view>
@@ -51,7 +51,7 @@
     <view wx:if='{{false}}' class="more fs32">加载更多 →_→</view>
   </view>
   <view class='lt {{navclass.content2class}}'>
-    <view class="containers" wx:for="{{articleheart}}" wx:for-item="contents" wx:key="articleheart" id='{{contents.id}}'>
+    <view class="containers" catchtap='articleInfo' wx:for="{{articleheart}}" wx:for-item="contents" wx:key="articleheart" id='{{contents.id}}'>
       <view class='image'>
         <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
       </view>
@@ -70,7 +70,7 @@
   </view>
 
   <view class='lt {{navclass.content3class}}' id='content3' wx:if='{{isUse}}'>
-    <view wx:for='{{users}}' wx:for-item='user' class='user' uid='{{user.uid}}' catchtap='userinfo' wx:key="users">
+    <view wx:for='{{users}}' wx:for-item='user' class='user' id='{{user.uid}}' catchtap='userinfo' wx:key="users">
       <image class='userimage' src='{{user.image}}' mode='aspectFill'></image>
       <view class='username fs36'>{{user.name}}</view>
       <image class='usersex' src='{{iconUrl}}man.png' wx:if='{{user.sex==1}}'></image>
@@ -79,7 +79,7 @@
     </view>
   </view>
   <view class='lt {{navclass.content4class}}' id='content4' wx:if='{{utype=="manage"}}'>
-    <view class="containers" wx:for="{{articlenoshow}}" wx:for-item="contents" wx:key="articlenoshow" id='{{contents.id}}'>
+    <view class="containers" catchtap='articleInfo' wx:for="{{articlenoshow}}" wx:for-item="contents" wx:key="articlenoshow" id='{{contents.id}}'>
       <view class='image'>
         <image src='{{iconUrl+contents.image}}' mode='aspectFill'></image>
       </view>
