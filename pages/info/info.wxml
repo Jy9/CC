@@ -5,7 +5,7 @@
   <view class='bodytitle fs46'>{{article.title}}</view>
   <view class='bodydate fs28'>{{article.date}}</view>
   <view class='bodysubject fs28'>{{article.label}}</view>
-  <view class='bodypeople fs32'>作者：{{article.user.name}}</view>
+  <view class='bodypeople fs32' id='{{article.user.uid}}' catchtap='useInfo'>作者：{{article.user.name}}</view>
   <view class='bodypraise'>
     <image src='{{iconUrl}}heartactive.png' mode='aspectFill'></image>
     <text class='fs28'>{{article.heart}}</text>
@@ -40,15 +40,17 @@
 
 <view wx:if='{{ispass}}'>
   <view class='discuss' wx:for='{{discuss}}' wx:for-item='discussinfo' wx:key='discuss'>
-    <image class='distitle lt' mode='aspectFill' src='{{discussinfo.image}}'></image>
-    <view class='disname lt fs32'>{{discussinfo.name}}</view>
+    <image class='distitle lt' mode='aspectFill' src='{{discussinfo.image}}' catchtap='useInfo' id='{{discussinfo.uid}}'></image>
+    <view class='disname lt fs32' catchtap='useInfo' id='{{discussinfo.uid}}'>{{discussinfo.name}}</view>
     <view class='disdate lt fs28'>{{discussinfo.date}}</view>
-    <view class='approve rt fs28' id='{{discussinfo.discussid}}' catchtap='good'>
-      <image mode='aspectFill' src='{{iconUrl}}heart.png'></image>
+    <view class='approve rt fs28' id='{{discussinfo.discussid+"/"+discussinfo.isgood}}' catchtap='good'>
+      <image wx:if='{{discussinfo.isgood}}' mode='aspectFill' src='{{iconUrl}}heartactive.png'></image>
+      <image wx:else mode='aspectFill' src='{{iconUrl}}heart.png'></image>
       <text>{{discussinfo.good}}</text>
     </view>
-    <view class='rubbish rt fs28' id='{{discussinfo.discussid}}' catchtap='rubbish'>
-      <image mode='aspectFill' src='{{iconUrl}}noheart.png'></image>
+    <view class='rubbish rt fs28' id='{{discussinfo.discussid+"/"+discussinfo.isrubbish}}' catchtap='rubbish'>
+      <image wx:if='{{discussinfo.isrubbish}}' mode='aspectFill' src='{{iconUrl}}noheartactive.png'></image>
+      <image wx:else mode='aspectFill' src='{{iconUrl}}noheart.png'></image>
       <text>{{discussinfo.rubbish}}</text>
     </view>
     <view class='discontent lt fs32'>{{discussinfo.str}}</view>

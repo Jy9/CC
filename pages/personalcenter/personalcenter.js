@@ -40,6 +40,7 @@ Page({
   getUse: function (fn) {
     var useid = this.data.useid;
     var thisData = this;
+    console.log(useid)
     $.query({
       url: "getuser",
       data: {

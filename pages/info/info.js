@@ -14,7 +14,9 @@ Page({
   onLoad: function (options) {
     var thisData = this;
     console.log();
-
+    wx.showLoading({
+        title: '加载中...',
+    })
     $.query({
       url: "articleinfo",
       data: {
@@ -22,11 +24,24 @@ Page({
         uid: app.globalData.userInfo.uid
       },
       success: function (data) {
+        wx.hideLoading();
         thisData.setData({
           article: data.data,
           ispass: data.data.isshow
         })
       }
+    });
+    $.query({
+        url:"getarticlecomment",
+        data:{
+            uid: app.globalData.userInfo.uid,
+            articleid: options.id
+        },
+        success:function(data){
+            thisData.setData({
+                discuss:data.data
+            })
+        }
     })
   },
   headerback: function () {
@@ -84,6 +99,9 @@ Page({
     }
   },
   pass: function () {
+    wx.showLoading({
+        title: '加载中...'
+    })
     var that = this;
     if (that.data.ispass) {
       $.query({
@@ -92,31 +110,34 @@ Page({
           uid: app.globalData.userInfo.uid,
           articleid: that.data.article.articleid,
           love: !that.data.article.love
+        },
+        success:function(data){
+            var article = that.data.article;
+            if (that.data.article.love) {
+                wx.showToast({
+                    title: '已取消赞赏'
+                })
+                article.love = false;
+                article.heart -= 1;
+            } else {
+                wx.showToast({
+                    title: '点赞成功'
+                })
+                article.love = true;
+                article.heart += 1;
+            }
+            that.setData({
+                article: article
+            })
+            wx.hideLoading()
         }
-      })
-      var article = that.data.article;
-      if (that.data.article.love) {
-        wx.showToast({
-          title: '已取消赞赏'
-        })
-        article.love = false;
-        article.heart -=1;
-      } else {
-        wx.showToast({
-          title: '点赞成功'
-        })
-        article.love = true;
-        article.heart += 1;
-      }
-      that.setData({
-        article: article
       })
     } else {
       $.query({
         url: "passarticle",
         data: { id: that.data.article.articleid },
         success: function (data) {
-          wx: wx.showToast({
+          wx.showToast({
             title: '审核通过'
           });
           setTimeout(function () {
@@ -132,9 +153,85 @@ Page({
     })
   },
   good:function(e){
-
+      wx.showLoading({
+          title: '加载中...'
+      })
+      var that = this;
+      var idis = e.currentTarget.id.split("/");
+      if (idis[1] == "true"){
+          var isgood = false
+      }else{
+          var isgood = true
+      }
+    $.query({
+        url:"discussgood",
+        data:{
+            id: idis[0],
+            uid: app.globalData.userInfo.uid,
+            isgood: isgood
+        },
+        success:function(data){
+            wx.hideLoading()
+            console.log(data)
+            var discuss = that.data.discuss;
+            for(let i=0;i<discuss.length;i++){
+                if (discuss[i].discussid == idis[0]){
+                    discuss[i].isgood = isgood
+                    if(isgood){
+                        discuss[i].good += 1
+                    }else{
+                        discuss[i].good -= 1
+                    }
+                }
+            }
+            that.setData({
+                discuss:discuss
+            })
+        }
+    })
   },
   rubbish:function(e){
-
+      wx.showLoading({
+          title: '加载中...'
+      })
+      var that = this;
+      var idis = e.currentTarget.id.split("/");
+      if (idis[1] == "true") {
+          var isrubbish = false
+      } else {
+          var isrubbish = true
+      }
+      $.query({
+          url: "discussrubbish",
+          data: {
+              id: idis[0],
+              uid: app.globalData.userInfo.uid,
+              isrubbish: isrubbish
+          },
+          success: function (data) {
+              wx.hideLoading()
+              console.log(data)
+              var discuss = that.data.discuss;
+              for (let i = 0; i < discuss.length; i++) {
+                  if (discuss[i].discussid == idis[0]) {
+                      discuss[i].isrubbish = isrubbish
+                      if (isrubbish) {
+                          discuss[i].rubbish += 1
+                      } else {
+                          discuss[i].rubbish -= 1
+                      }
+                  }
+              }
+              that.setData({
+                  discuss: discuss
+              })
+          }
+      })
+  },
+  useInfo:function(e){
+      console.log(e.currentTarget.id)
+      wx.navigateTo({
+          url: '../personalcenter/personalcenter?id=' + e.currentTarget.id,
+      })
   }
 })

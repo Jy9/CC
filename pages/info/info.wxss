@@ -141,10 +141,11 @@ page {
   height: 60rpx;
   position: absolute;
   top: w0rpx;
+  z-index: 2;
 }
 
 .approve {
-  right: 200rpx;
+  right: 160rpx;
 }
 
 .rubbish {
@@ -159,7 +160,7 @@ page {
 .approve>text, .rubbish>text {
   position: absolute;
   top: -10rpx;
-  left: -70rpx;
+  left: -40rpx;
   border-right: 1rpx solid #f27c5f;
   color: #f27c5f;
   border-radius: 12rpx;
@@ -198,7 +199,7 @@ page {
   bottom: 0rpx;
   left: 0rpx;
   background: #fff;
-  z-index: 1;
+  z-index: 3;
 }
 
 .footer>view {
