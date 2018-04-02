@@ -3,6 +3,7 @@ var app = getApp();
 const $ = require('../../utils/util.js');
 Page({
   data: {
+    useid:0,
     iconUrl: "",
     utype: "member",
     isUse:true,
@@ -29,7 +30,69 @@ Page({
     articledate: [],
     articleheart: [],
     users: [],
-    articlenoshow: []
+    articlenoshow: [],
+  },
+  onPullDownRefresh: function () {
+    this.getUse(function () {
+      wx.stopPullDownRefresh();
+    })
+  },
+  getUse: function (fn) {
+    var useid = this.data.useid;
+    var thisData = this;
+    $.query({
+      url: "getuser",
+      data: {
+        uid: app.globalData.userInfo.uid,
+        useid: useid
+      },
+      success: function (data) {
+        console.log(data)
+        var setObj = {
+          userInfo: data.data.userinfo,
+          articledate: data.data.articledate,
+          articleheart: data.data.articleheart,
+          users: data.data.userattent,
+          articlenoshow: data.data.articlenoshow
+        }
+        if (useid != app.globalData.userInfo.uid) {
+          setObj.isUse = false;
+          setObj.utype = "use";
+        } else {
+          if (data.data.userinfo.utype == 1) {
+            setObj.utype = "manage";
+          }
+        }
+        thisData.setData(setObj);
+        fn();
+        setTimeout(function () {
+          var query1 = wx.createSelectorQuery();
+          query1.select("#content1").boundingClientRect();
+          query1.exec(function (res) {
+            thisData.setData({
+              cont1H: res[0].height + "px",
+              contH: res[0].height + "px"
+            })
+          })
+          var query3 = wx.createSelectorQuery();
+          query3.select("#content3").boundingClientRect();
+          query3.exec(function (res) {
+            thisData.setData({
+              cont3H: res[0].height + "px"
+            })
+          })
+          if (thisData.data.utype == "manage") {
+            var query4 = wx.createSelectorQuery();
+            query4.select("#content4").boundingClientRect();
+            query4.exec(function (res) {
+              thisData.setData({
+                cont4H: res[0].height + "px"
+              })
+            })
+          }
+        }, 200)
+      }
+    })
   },
   onLoad: function (options) {
     var thisData = this;
@@ -46,58 +109,11 @@ Page({
     if (!options.id){
       options.id = app.globalData.userInfo.uid;
     }
-    $.query({
-      url:"getuser",
-      data:{
-        uid: app.globalData.userInfo.uid,
-        useid: options.id
-      },
-      success: function (data) {
-        console.log(data)
-        var setObj = {
-            userInfo: data.data.userinfo,
-            articledate: data.data.articledate,
-            articleheart: data.data.articleheart,
-            users: data.data.userattent,
-            articlenoshow: data.data.articlenoshow
-        }
-        if (options.id != app.globalData.userInfo.uid ){
-            setObj.isUse = false;
-            setObj.utype = "use";
-        }else{
-            if (data.data.userinfo.utype == 1) {
-                setObj.utype = "manage";
-            }
-        }
-        thisData.setData(setObj);
-        wx.hideLoading();
-        setTimeout(function () {
-            var query1 = wx.createSelectorQuery();
-            query1.select("#content1").boundingClientRect();
-            query1.exec(function (res) {
-                thisData.setData({
-                    cont1H: res[0].height + "px",
-                    contH: res[0].height + "px"
-                })
-            })
-            var query3 = wx.createSelectorQuery();
-            query3.select("#content3").boundingClientRect();
-            query3.exec(function (res) {
-                thisData.setData({
-                    cont3H: res[0].height + "px"
-                })
-            })
-            if (thisData.data.utype == "manage") {
-                var query4 = wx.createSelectorQuery();
-                query4.select("#content4").boundingClientRect();
-                query4.exec(function (res) {
-                    thisData.setData({
-                        cont4H: res[0].height + "px"
-                    })
-                })
-            }
-        }, 400)
-      }
+    thisData.setData({
+      useid: Number(options.id)
+    })
+    thisData.getUse(function(){
+      wx.hideLoading();
     })
   },
   header_back: function () {
@@ -124,9 +140,16 @@ Page({
     }
   },
   publish: function () {
-    wx.navigateTo({
-      url: '../publish/publish',
-    })
+    if (this.data.utype != "use"){
+      wx.navigateTo({
+        url: '../publish/publish',
+      })
+    }else{
+      wx.showToast({
+        title: '暂时不能举报用户',
+        icon:"none"
+      })
+    }
   },
   set: function () {
     wx.navigateTo({
@@ -171,7 +194,9 @@ Page({
       }
   },
   userinfo:function(e){
-      console.log(e.currentTarget.id)
+      wx.navigateTo({
+        url: '../personalcenter/personalcenter?id=' + e.currentTarget.id
+      })
   },
   articleInfo:function(e){
       wx.navigateTo({

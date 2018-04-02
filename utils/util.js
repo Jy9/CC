@@ -1,5 +1,7 @@
 //query
-var URL = "http://localhost:3000/";
+var app = getApp();
+var URL = app.globalData.URL;
+//var URL = "http://localhost:3000/"
 var query = function (obj) {
   wx.request({
       url: URL + obj.url,
@@ -18,7 +20,6 @@ var uploadImg = function (obj) {
 }
 
 module.exports = {
-    URL:URL,
     uploadImg: uploadImg,
     query:query
 };

@@ -23,7 +23,8 @@
 <view class='footer' wx:if='{{ispass}}'>
   <view class='lt' catchtap='footerview' wx:if='{{discussval!=""}}'>{{discussval}}</view>
   <view class='lt' catchtap='footerview' wx:else>快来评价这篇文章吧！</view>
-  <image class='rt' src='{{iconUrl}}heart.png'></image>
+  <image wx:if='{{article.love}}' class='rt' src='{{iconUrl}}heartactive.png' catchtap='pass'></image>
+  <image wx:else class='rt' src='{{iconUrl}}heart.png' catchtap='pass'></image>
 </view>
 <view class='footer' wx:else>
   <view class='lt' catchtap='footerview' wx:if='{{discussval!=""}}'>{{discussval}}</view>
@@ -38,32 +39,18 @@
 <view class='discusssublime fs36' id='discusssublime' catchtap='discussblur'>提交</view>
 
 <view wx:if='{{ispass}}'>
-  <view class='discuss'>
-    <image class='distitle lt' mode='aspectFill' src='{{iconUrl}}photo.jpg'></image>
-    <view class='disname lt fs32'>贾越</view>
-    <view class='disdate lt fs28'>2018/3/15</view>
-    <view class='approve rt fs28'>
-      <image mode='aspectFill' src='{{iconUrl}}noheart.png'></image>
-      <text>122</text>
-    </view>
-    <view class='rubbish rt fs28'>
+  <view class='discuss' wx:for='{{discuss}}' wx:for-item='discussinfo' wx:key='discuss'>
+    <image class='distitle lt' mode='aspectFill' src='{{discussinfo.image}}'></image>
+    <view class='disname lt fs32'>{{discussinfo.name}}</view>
+    <view class='disdate lt fs28'>{{discussinfo.date}}</view>
+    <view class='approve rt fs28' id='{{discussinfo.discussid}}' catchtap='good'>
       <image mode='aspectFill' src='{{iconUrl}}heart.png'></image>
-      <text>122</text>
+      <text>{{discussinfo.good}}</text>
     </view>
-    <view class='discontent lt fs32'>我是评论内我我是评论内容我是评论内容是评论内容我是评论内容我是评论内容容</view>
-  </view>
-  <view class='discuss'>
-    <image class='distitle lt' mode='aspectFill' src='{{iconUrl}}photo.jpg'></image>
-    <view class='disname lt fs32'>贾越</view>
-    <view class='disdate lt fs28'>2018/3/15</view>
-    <view class='approve rt fs28'>
+    <view class='rubbish rt fs28' id='{{discussinfo.discussid}}' catchtap='rubbish'>
       <image mode='aspectFill' src='{{iconUrl}}noheart.png'></image>
-      <text>122</text>
+      <text>{{discussinfo.rubbish}}</text>
     </view>
-    <view class='rubbish rt fs28'>
-      <image mode='aspectFill' src='{{iconUrl}}heart.png'></image>
-      <text>122</text>
-    </view>
-    <view class='discontent lt fs32'>我是评论内我我是评论内容我是评论内容是评论内容我是评论内容我是评论内容容</view>
+    <view class='discontent lt fs32'>{{discussinfo.str}}</view>
   </view>
 </view>

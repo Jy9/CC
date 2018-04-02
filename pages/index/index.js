@@ -7,6 +7,18 @@ Page({
     iconUrl: "",
     content:[]
   },
+  onPullDownRefresh: function () {
+    var that = this;
+    $.query({
+      url: "getarticlelist",
+      success: function (data) {
+        that.setData({
+          content: data.data
+        });
+      }
+    })
+    wx.stopPullDownRefresh()
+  },
   onLoad: function () {
     var thisData = this;
     var isLoading = 0;

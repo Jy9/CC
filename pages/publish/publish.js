@@ -115,25 +115,29 @@ Page({
       sizeType: 'original',
       success: function (res) {
         console.log(res)
+        wx.showLoading({
+          title: '正在上传...',
+        })
         $.uploadImg({
             path: res.tempFilePaths[0],
             success:function(data){
-                console.log(data);
+              wx.hideLoading()
+              console.log(data);
+              article.push({
+                type: "image",
+                src: data.data
+              })
+              thisObj.setData({
+                article: article
+              })
+              setTimeout(function () {
+                thisObj.setData({
+                  thistextarea: "",
+                  textfocus: true
+                })
+              }, 400)
             }
         })
-        article.push({
-          type: "image",
-          src: res.tempFilePaths[0]
-        })
-        thisObj.setData({
-          article: article
-        })
-        setTimeout(function () {
-          thisObj.setData({
-            thistextarea: "",
-            textfocus: true
-          })
-        }, 400)
       }
     })
   },
@@ -177,7 +181,6 @@ Page({
           article: that.data.article,
           date: new Date(),
           label: that.data.label,
-          heart: 0,
           isshow: 0
       }
       console.log(article)
