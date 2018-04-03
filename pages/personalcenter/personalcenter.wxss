@@ -133,14 +133,10 @@ page{
 }
 
 .nav>view {
-  width: 250rpx;
+  width: 187.5rpx;
   line-height: 80rpx;
   text-align: center;
   transition: all 0.4s;
-}
-
-.nav.manage>view {
-  width: 187.5rpx;
 }
 
 .nav.use>view{
@@ -228,6 +224,14 @@ page{
   right: 20rpx;
   top: 0rpx;
 }
+.praiseno{
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+}
+.praiseno>text {
+  line-height: 36rpx;
+}
 
 .praise>text {
   position: absolute;
@@ -303,4 +307,28 @@ page{
 .useraddress {
   top: 100rpx;
   left: 240rpx;
+}
+
+.report{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  padding-top: 200rpx;
+  box-sizing: border-box;
+}
+.report>textarea{
+  width: 100vw;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+}
+.report>view{
+  width: 80vw;
+  margin-left: 10vw;
+  line-height: 120rpx;
+  margin-top: 40rpx;
+  text-align: center;
+  border-top: 1rpx solid #eee;
 }

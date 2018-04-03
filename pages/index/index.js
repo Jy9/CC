@@ -5,7 +5,9 @@ Page({
   data: {
     labels: [],
     iconUrl: "",
-    content:[]
+    content:[],
+    isshow:false,
+    textclass:""
   },
   onPullDownRefresh: function () {
     var that = this;
@@ -51,6 +53,12 @@ Page({
               },
               success: function (data) {
                 app.globalData.userInfo = data.data;
+                if(data.data.utype == 1){
+                  thisData.setData({
+                    isshow:true,
+                    textclass:"active"
+                  })
+                }
                 isLoading += 1;
               }
             })
@@ -102,12 +110,12 @@ Page({
   content: function (e) {
     console.log(e.currentTarget.id)
     wx.navigateTo({
-      url: '../info/info?id=' + e.currentTarget.id
+      url: '../info/info?type=ok&id=' + e.currentTarget.id
     })
   },
-  msg:function(){
+  audit:function(){
     wx.navigateTo({
-      url: '../msg/msg'
+      url: '../subject/subject?isshow=1'
     })
   }
 })

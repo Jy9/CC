@@ -18,27 +18,27 @@
   </view>
 </view>
 
-<view class='hr fs28'>评论数：12</view>
+<view class='hr fs28' wx:if='{{articletype!="wshuse"}}'>评论数：{{discuss.length}}</view>
 
-<view class='footer' wx:if='{{ispass}}'>
+<view class='footer' wx:if='{{articletype=="ok"}}'>
   <view class='lt' catchtap='footerview' wx:if='{{discussval!=""}}'>{{discussval}}</view>
   <view class='lt' catchtap='footerview' wx:else>快来评价这篇文章吧！</view>
   <image wx:if='{{article.love}}' class='rt' src='{{iconUrl}}heartactive.png' catchtap='pass'></image>
   <image wx:else class='rt' src='{{iconUrl}}heart.png' catchtap='pass'></image>
 </view>
-<view class='footer' wx:else>
+<view class='footer' wx:if='{{articletype=="wsh"}}'>
   <view class='lt' catchtap='footerview' wx:if='{{discussval!=""}}'>{{discussval}}</view>
   <view class='lt' catchtap='footerview' wx:else>拒绝显示该页面</view>
   <image class='rt' src='{{iconUrl}}heart.png' catchtap='pass'></image>
 </view>
 
-<view class='discusscompile fs32' catchtap='footerview'>
+<view class='discusscompile fs32' catchtap='footerview' wx:if='{{articletype!="wshuse"}}'>
   <textarea wx:if='{{istextarea}}' focus='{{textareafocus}}' value='{{discussval}}' cursor-spacing='20' placeholder='在这里写下你的看法' maxlength='-1' bindinput='bindinput' />
   <text wx:else>在这里写下你的看法</text>
 </view>
-<view class='discusssublime fs36' id='discusssublime' catchtap='discussblur'>提交</view>
+<view class='discusssublime fs36' id='discusssublime' catchtap='discussblur' wx:if='{{articletype!="wshuse"}}'>提交</view>
 
-<view wx:if='{{ispass}}'>
+<view>
   <view class='discuss' wx:for='{{discuss}}' wx:for-item='discussinfo' wx:key='discuss'>
     <image class='distitle lt' mode='aspectFill' src='{{discussinfo.image}}' catchtap='useInfo' id='{{discussinfo.uid}}'></image>
     <view class='disname lt fs32' catchtap='useInfo' id='{{discussinfo.uid}}'>{{discussinfo.name}}</view>

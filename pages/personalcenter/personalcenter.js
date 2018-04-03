@@ -9,6 +9,8 @@ Page({
     isUse:true,
     headerOP: 0,
     userInfo:{},
+    reporttext:"",
+    isreport:false,
     unfold: {
       height: "-140rpx",
       cont: "展开(っ´Ι`)っ"
@@ -59,10 +61,6 @@ Page({
         if (useid != app.globalData.userInfo.uid) {
           setObj.isUse = false;
           setObj.utype = "use";
-        } else {
-          if (data.data.userinfo.utype == 1) {
-            setObj.utype = "manage";
-          }
         }
         thisData.setData(setObj);
         fn();
@@ -82,15 +80,13 @@ Page({
               cont3H: res[0].height + "px"
             })
           })
-          if (thisData.data.utype == "manage") {
-            var query4 = wx.createSelectorQuery();
-            query4.select("#content4").boundingClientRect();
-            query4.exec(function (res) {
-              thisData.setData({
-                cont4H: res[0].height + "px"
-              })
+          var query4 = wx.createSelectorQuery();
+          query4.select("#content4").boundingClientRect();
+          query4.exec(function (res) {
+            thisData.setData({
+              cont4H: res[0].height + "px"
             })
-          }
+          })
         }, 200)
       }
     })
@@ -141,14 +137,52 @@ Page({
     }
   },
   publish: function () {
-    if (this.data.utype != "use"){
+    var that = this;
+    if (that.data.utype != "use"){
       wx.navigateTo({
         url: '../publish/publish',
       })
     }else{
+      that.setData({
+        isreport:true
+      })
+    }
+  },
+  reporttextchange:function(e){
+    var that = this;
+    that.setData({
+      reporttext: e.detail.value
+    })
+  },
+  reportuser:function(){
+    var that = this;
+    if (that.data.reporttext != "") {
+      wx.showLoading({
+        title: '举报中...',
+      })
+      $.query({
+        url: "reportuser",
+        data: {
+          uid: app.globalData.userInfo.uid,
+          useid: that.data.userInfo.uid,
+          text: that.data.reporttext
+        },
+        success: function (data) {
+          that.setData({
+            isreport: false
+          })
+          setTimeout(function(){
+            wx.showToast({
+              title: '举报成功 CC感谢您的参与',
+              icon: "none"
+            })
+          },600)
+        }
+      })
+    } else {
       wx.showToast({
-        title: '暂时不能举报用户',
-        icon:"none"
+        title: '请输入举报理由',
+        icon: "none"
       })
     }
   },
@@ -189,7 +223,7 @@ Page({
         })
       }else{
           wx.showToast({
-              title: '您当前的关注人数为'+that.data.userInfo.heart,
+              title: '当前的关注您的人数为'+that.data.userInfo.heart,
               icon:"none"
           })
       }
@@ -201,8 +235,43 @@ Page({
   },
   articleInfo:function(e){
       wx.navigateTo({
-          url: '../info/info?id=' + e.currentTarget.id
+          url: '../info/info?type=ok&id=' + e.currentTarget.id
       })
+  },
+  articleredact:function(e){
+    if(e.currentTarget.dataset.istap){
+      wx.navigateTo({
+        url: '../info/info?type=wshuse&id=' + e.currentTarget.id,
+      })
+    }else{
+      wx.navigateTo({
+        url: '../publish/publish?id=' + e.currentTarget.id,
+      })
+    }
+  },
+  clear:function(e){
+    var that = this;
+    var articlenoshow = that.data.articlenoshow;
+    wx.showLoading({
+      title: '删除中...',
+    })
+    $.query({
+      url:"cleararticle",
+      data: { articleid: e.currentTarget.id},
+      success:function(data){
+        wx.showToast({
+          title: '删除成功',
+        })
+        for (let i = 0; i <articlenoshow.length;i++){
+          if (articlenoshow[i].id == e.currentTarget.id){
+            articlenoshow.splice(i,1)
+          }
+        }
+        that.setData({
+          articlenoshow: articlenoshow
+        })
+      }
+    })
   },
   nav1: function () {
     var thisObj = this;

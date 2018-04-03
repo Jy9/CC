@@ -7,8 +7,7 @@
     "pages/subject/subject",
     "pages/info/info",
     "pages/setuse/setuse",
-    "pages/publish/publish",
-    "pages/msg/msg"
+    "pages/publish/publish"
   ],
   "window": {
     "navigationStyle": "custom",

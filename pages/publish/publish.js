@@ -12,17 +12,42 @@ Page({
     textfocus: false,
     preview: false,
     isselect: false,
+    isreport:false,
+    reportid:0,
+    reporttext:"",
     title: "",
     label: "选择标签",
-    article: []
+    article: [],
+    articleid:0
   },
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this;
     that.setData({
       iconUrl: app.globalData.iconUrl,
       labels: app.globalData.labels,
       userInfo: app.globalData.userInfo
     })
+
+    if (options.id){
+      wx.showLoading({
+        title: '加载中...',
+      })
+      $.query({
+        url:"articleinfo",
+        data: { id: options.id},
+        success:function(data){
+          wx.hideLoading();
+          that.setData({
+            articleid: data.data.articleid,
+            article: data.data.article,
+            title:data.data.title,
+            label: data.data.label,
+            preview: true,
+            isText: false
+          })
+        }
+      })
+    }
   },
   back: function () {
     wx.navigateBack()
@@ -100,6 +125,25 @@ Page({
       })
     }
   },
+  selectImg:function(fn){
+    wx.chooseImage({
+      count: 1,
+      sizeType: 'original',
+      success: function (res) {
+        console.log(res)
+        wx.showLoading({
+          title: '正在上传...',
+        })
+        $.uploadImg({
+          path: res.tempFilePaths[0],
+          success: function (data) {
+            fn(data);
+            wx.hideLoading()
+          }
+        })
+      }
+    })
+  },
   addImg: function (e) {
     var thisObj = this;
     var article = thisObj.data.article;
@@ -110,35 +154,21 @@ Page({
         text: thistextarea
       })
     }
-    wx.chooseImage({
-      count: 1,
-      sizeType: 'original',
-      success: function (res) {
-        console.log(res)
-        wx.showLoading({
-          title: '正在上传...',
+    thisObj.selectImg(function(data){
+      console.log(data);
+      article.push({
+        type: "image",
+        src: data.data
+      })
+      thisObj.setData({
+        article: article
+      })
+      setTimeout(function () {
+        thisObj.setData({
+          thistextarea: "",
+          textfocus: true
         })
-        $.uploadImg({
-            path: res.tempFilePaths[0],
-            success:function(data){
-              wx.hideLoading()
-              console.log(data);
-              article.push({
-                type: "image",
-                src: data.data
-              })
-              thisObj.setData({
-                article: article
-              })
-              setTimeout(function () {
-                thisObj.setData({
-                  thistextarea: "",
-                  textfocus: true
-                })
-              }, 400)
-            }
-        })
-      }
+      }, 400)
     })
   },
   textareainput: function (e) {
@@ -167,21 +197,27 @@ Page({
       })
     }, 400)
   },
-  ok:function(){
+  ok:function(e){
       var that = this;
       wx.showLoading({
           title: '发表中...'
       })
+      var title = '已保存至草稿箱';
+      if (e.currentTarget.dataset['istrue']){
+        title = '发表成功';
+      }
       var article = {
           user: {
               name: that.data.userInfo.name,
               uid: that.data.userInfo.uid
           },
+          articleid: that.data.articleid,
           title: that.data.title,
           article: that.data.article,
           date: new Date(),
           label: that.data.label,
-          isshow: 0
+          isshow: 0,
+          istrue: e.currentTarget.dataset['istrue']
       }
       console.log(article)
       $.query({
@@ -189,12 +225,53 @@ Page({
           data:article,
           success:function(data){
             wx.showToast({
-                title: '发表成功'
+                title: title
             });
             setTimeout(function(){
                 wx.navigateBack();
             },600)
           }
       })
+  },
+  articleset:function(e){
+    var that = this;
+    var article = that.data.article;
+    if (article[e.currentTarget.id].type=="image"){
+      that.selectImg(function (data) {
+        article[e.currentTarget.id].src = data.data;
+        that.setData({
+          article: article
+        })
+      })
+    }else{
+      that.setData({
+        reporttext: article[e.currentTarget.id].text,
+        reportid: e.currentTarget.id,
+        isreport:true
+      })
+    }
+  },
+  reportuser:function(){
+    var that = this;
+    var article = that.data.article;
+    article[that.data.reportid].text = that.data.reporttext;
+    that.setData({
+      article: article,
+      isreport: false
+    })
+  },
+  reporttextchange:function(e){
+    var that = this;
+    that.setData({
+      reporttext: e.detail.value
+    })
+  },
+  articledel:function(e){
+    var that = this;
+    var article = that.data.article;
+    article.splice(e.currentTarget.id,1);
+    that.setData({
+      article: article
+    })
   }
 })

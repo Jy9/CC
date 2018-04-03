@@ -1,2 +1,0 @@
-<!--msg.wxml-->
-<view class='header fs36' bindtap='headerback'>《返回</view>

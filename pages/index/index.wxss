@@ -121,7 +121,6 @@
 
 .cont>image {
   width: 750rpx;
-  height: 360rpx;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -142,9 +141,12 @@
 .cont>view>text {
   color: #f27c5f;
   display: block;
-  width: 180rpx;
+  width: 193rpx;
   border-bottom: 1rpx solid #f27c5f;
   border-top: 1rpx solid #f27c5f;
+}
+.cont>view.active>text{
+  width: 145rpx;
 }
 
 .footer {
@@ -158,4 +160,13 @@
   padding: 10rpx 20rpx;
   border-radius: 12rpx;
   box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(0, 0, 0, 0.4);
+}
+
+.cont>image.msg{
+  display: block;
+  position:absolute;
+  top: 200rpx;
+  right: 140rpx;
+  left: auto;
+  width: 60rpx;
 }

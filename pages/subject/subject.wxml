@@ -1,7 +1,7 @@
 <!--subject.wxml-->
 <view class='header fs36' bindtap='headerback'>《返回</view>
 
-<view class="containers" wx:for="{{content}}" wx:for-item="contents" wx:key="subject">
+<view class="containers" wx:for="{{content}}" wx:for-item="contents" wx:key="subject" catchtap='info' id='{{contents.id}}'>
   <view class='image'>
     <image src='{{contents.image}}' mode='aspectFill'></image>
   </view>

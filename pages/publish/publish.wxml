@@ -26,9 +26,10 @@
 
 <view class='preview' wx:if='{{preview}}'>
   <view>
-    <view catchtap='previewback' class='lt'>继续编辑</view>
-    <view catchtap='ok' class='lt'>发表</view>
+    <view catchtap='ok' data-istrue='{{false}}' class='lt'>保存草稿箱</view>
+    <view catchtap='ok' data-istrue='{{true}}' class='lt'>发表</view>
   </view>
+  <view catchtap='previewback' class='previewback'>《继续编辑</view>
   <view class='body'>
     <view class='bodytitle fs46'>{{title}}</view>
     <view class='bodydate fs28'>0000-00-00</view>
@@ -39,12 +40,19 @@
       <text class='fs28'>0</text>
     </view>
     <view class='bodycontent fs32'>
-      <view wx:for='{{article}}' wx:for-item='label' wx:key='label'>
+      <view wx:for='{{article}}' wx:for-item='label' wx:key='label' wx:for-index='index'>
+        <view class='arset fs28' id='{{index}}' catchtap='articleset'>编辑</view>
+        <view class='ardel fs28' id='{{index}}' catchtap='articledel'>删除</view>
         <text wx:if='{{label.type=="text"}}' space='emsp'>{{label.text}}</text>
         <image mode='widthFix' wx:if='{{label.type=="image"}}' src='{{label.src}}'></image>
       </view>
     </view>
   </view>
+</view>
+
+<view class='report' wx:if='{{isreport}}'>
+  <textarea focus='{{isreport}}' bindinput='reporttextchange' value='{{reporttext}}'></textarea>
+  <view catchtap='reportuser'>更改</view>
 </view>
 
 <view class='footer' catchtap='back'>《 返回</view>

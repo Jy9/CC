@@ -3,7 +3,7 @@
   <view class='bgshadow'></view>
   <view class='header_back fs36' catchtap='header_back'>《返回</view>
   <image mode='aspectFill' src='{{userInfo.image}}' class='bgimage'></image>
-  <image class='set' src='{{iconUrl}}set.png' catchtap='set'></image>
+  <image class='set' wx:if='{{isUse}}' src='{{iconUrl}}set.png' catchtap='set'></image>
 </view>
 <view class='header'>
   <image mode='aspectFill' src='{{userInfo.image}}' class='titleimage'></image>
@@ -29,7 +29,7 @@
   <view catchtap='nav1' class='lt {{navclass.nav1class}}'>最新发布</view>
   <view catchtap='nav2' class='lt {{navclass.nav2class}}'>热门</view>
   <view catchtap='nav3' class='lt {{navclass.nav3class}}' wx:if='{{utype!="use"}}'>我的关注</view>
-  <view catchtap='nav4' class='lt {{navclass.nav4class}}' wx:if='{{utype=="manage"}}'>待审核</view>
+  <view catchtap='nav4' class='lt {{navclass.nav4class}}' wx:if='{{utype!="use"}}'>草稿箱</view>
 </view>
 
 <view class='content' style='height:{{contH}}'>
@@ -79,17 +79,18 @@
       <view class='useraddress fs32'>{{user.city}}</view>
     </view>
   </view>
-  <view class='lt {{navclass.content4class}}' id='content4' wx:if='{{utype=="manage"}}'>
-    <view class="containers" catchtap='articleInfo' wx:for="{{articlenoshow}}" wx:for-item="contents" wx:key="articlenoshow" id='{{contents.id}}'>
+  <view class='lt {{navclass.content4class}}' id='content4' wx:if='{{utype!="use"}}'>
+    <view class="containers" catchtap='articleredact' wx:for="{{articlenoshow}}" wx:for-item="contents" wx:key="articlenoshow" id='{{contents.id}}' data-istap='{{!contents.str&&contents.istrue}}'>
       <view class='image'>
         <image src='{{contents.image}}' mode='aspectFill'></image>
       </view>
       <view class='date fs32'>
-        <text class='lt'>发布者：{{contents.name}}</text>
+        <text class='lt' style='color:#e4393c' catchtap='clear' id='{{contents.id}}' wx:if='{{!(!contents.str&&contents.istrue)}}'>删除</text>
         <text class='fs28 lt'>{{contents.date}}</text>
-        <view class='praise'>
-          <image src='{{iconUrl}}heartactive.png'></image>
-          <text class='fs28'>{{contents.praise}}</text>
+        <view class='praiseno'>
+        <text class='fs28' wx:if='{{!contents.istrue}}' style='color:#00AD19'>（未发布）</text>
+         <text class='fs28' wx:if='{{!contents.str&&contents.istrue}}' style='color:#00AD19'>（待审核）</text>
+         <text class='fs28' wx:if='{{contents.str}}' style='color:#e4393c'>（{{contents.str}}）</text>
         </view>
       </view>
       <view class='title fs36'>{{contents.title}}</view>
@@ -97,4 +98,9 @@
     </view>
     <view wx:if='{{false}}' class="more fs32">加载更多 →_→</view>
   </view>
+</view>
+
+<view class='report' wx:if='{{isreport}}'>
+  <textarea focus='{{isreport}}' bindinput='reporttextchange' placeholder='请输入您的举报理由 我们会郑重对待'></textarea>
+  <view catchtap='reportuser'>举报</view>
 </view>

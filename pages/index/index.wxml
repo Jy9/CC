@@ -24,11 +24,12 @@
   </view>
   <view wx:if='{{false}}' class="more fs32">加载更多 →_→</view>
   <view class="cont">
-    <image src='{{iconUrl}}first_background.jpg'></image>
-    <view class='fs28 text'>
+    <image mode='widthFix' src='{{iconUrl}}first_background.jpg'></image>
+    <view class='fs28 text {{textclass}}'>
       <text class='lt' catchtap='peoplelist'>打赏CC</text>
       <text class='lt' catchtap='personalcenter'>个人中心</text>
       <text class='lt' catchtap='about'>关于软件</text>
+      <text wx:if='{{isshow}}' class='lt' catchtap='audit'>待审核</text>
     </view>
     <view class='fs28'>CC写书</view>
   </view>
