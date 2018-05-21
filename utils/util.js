@@ -1,7 +1,6 @@
 //query
 var app = getApp();
 var URL = app.globalData.URL;
-//var URL = "http://localhost:3000/"
 var query = function (obj) {
   wx.request({
       url: URL + obj.url,
@@ -11,11 +10,15 @@ var query = function (obj) {
   })
 }
 var uploadImg = function (obj) {
+  console.log(obj)
     wx.uploadFile({
         url: URL+'upload/image',
         filePath: obj.path,
         name: 'image',
-        success: obj.success
+        success: obj.success,
+        fail:function(err){
+          console.log(err)
+        }
     })
 }
 

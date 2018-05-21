@@ -133,7 +133,7 @@ Page({
         console.log(res)
         wx.showLoading({
           title: '正在上传...',
-        })
+        });
         $.uploadImg({
           path: res.tempFilePaths[0],
           success: function (data) {

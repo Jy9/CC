@@ -11,8 +11,8 @@ App({
     //iconUrl: "http://41092527.nat123.cc/icon/",
     //URL: "http://localhost:3000/",
     //iconUrl: "http://localhost:3000/icon/", 
-    URL: "http://140.143.62.48:3000/",
-    iconUrl: "http://140.143.62.48:3000/icon/",
+    URL: "http://ccskill.imwork.net:13205/",
+    iconUrl: "http://ccskill.imwork.net:13205/icon/",
     labels: ["旅游","写作","程序员","连载","游戏","购物","故事会"]
   }
 })
